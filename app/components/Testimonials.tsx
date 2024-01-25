@@ -12,7 +12,7 @@ export default function Testimonials() {
 
 function TestimonialCard() {
   return (
-    <div className="w-96 bg-base-100 text-base-300">
+    <div className="w-[350px] bg-base-content text-base-300">
       <div className="chat chat-start my-auto">
         <div className="chat-image avatar">
           <div className="w-14 rounded-full">
@@ -24,13 +24,13 @@ function TestimonialCard() {
             />
           </div>
         </div>
-        <div className="chat-bubble w-[348px] lg:w-fit">
+        <div className="chat-bubble w-[300px] lg:w-fit">
           Not leave it in Darkness. Lorem ipsum dolor sit, amet consectetur
           adipisicing elit. Mollitia dolores aliquid perferendis esse ipsa
           incidunt. Porro, fuga, assumenda.
         </div>
       </div>
-      <h2 className="card-title text-base-content">Mary Jane</h2>
+      <h2 className="card-title text-secondary">Mary Jane</h2>
     </div>
   );
 }

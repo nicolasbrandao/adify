@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function Navbar() {
   return (
-    <nav className="navbar absolute z-10">
+    <nav className="navbar absolute z-10 text-base-100">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -23,7 +23,7 @@ export default function Navbar() {
           </div>
           <ul
             tabIndex={0}
-            className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-200 rounded-box w-52"
+            className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-primary rounded-box w-52"
           >
             <li>
               <Link href="/sobre">Sobre</Link>
@@ -56,7 +56,7 @@ export default function Navbar() {
           <li>
             <details>
               <summary>Produtos</summary>
-              <ul className="p-2 bg-base-200 z-10">
+              <ul className="p-2 bg-primary z-10">
                 <li>
                   <Link href="/produtos">Produto</Link>
                 </li>
@@ -74,7 +74,7 @@ export default function Navbar() {
       <div className="navbar-end">
         <Link
           href="/contato"
-          className="btn bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-base-300"
+          className="btn bg-gradient-to-r from-cyan-300 to-gray-200 text-primary-content border-none"
         >
           Contato
         </Link>
