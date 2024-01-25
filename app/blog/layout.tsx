@@ -1,18 +1,14 @@
-import type { Metadata } from 'next'
+import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: 'Adify - Blog',
-  description: 'Adify - Blog',
-}
+  title: "Adify - Blog",
+  description: "Adify - Blog",
+};
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
-  return (
-    <>
-      {children}
-    </>
-  )
+  return <>{children}</>;
 }

@@ -5,5 +5,5 @@ export default function PostPage() {
     <>
       <PostDetails />
     </>
-  )
+  );
 }
