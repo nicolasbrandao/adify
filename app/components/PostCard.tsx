@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function PostCard() {
   return (
-    <div className="card w-full bg-base-300">
+    <div className="card w-full bg-base-300 border-accent border">
       <figure>
         <Image
           src="https://picsum.photos/700/384"

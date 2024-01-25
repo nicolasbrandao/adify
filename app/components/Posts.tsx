@@ -19,16 +19,16 @@ export default function Posts() {
         </div>
       </div>
       <div className="flex justify-center w-full py-2 gap-2">
-        <a href="#item1" className="btn btn-xs">
+        <a href="#item1" className="btn btn-xs border-accent border w-6">
           1
         </a>
-        <a href="#item2" className="btn btn-xs">
+        <a href="#item2" className="btn btn-xs border-accent border w-6">
           2
         </a>
-        <a href="#item3" className="btn btn-xs">
+        <a href="#item3" className="btn btn-xs border-accent border w-6">
           3
         </a>
-        <a href="#item4" className="btn btn-xs">
+        <a href="#item4" className="btn btn-xs border-accent border w-6">
           4
         </a>
       </div>
