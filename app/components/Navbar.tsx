@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function Navbar() {
   return (
     <nav className="navbar absolute z-10">
@@ -24,10 +26,10 @@ export default function Navbar() {
             className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-200 rounded-box w-52"
           >
             <li>
-              <a>Sobre</a>
+              <Link href="/sobre">Sobre</Link>
             </li>
             <li>
-              <a>Produtos</a>
+              <Link href="/produtos">Produtos</Link>
               <ul className="p-2">
                 <li>
                   <a>Produto 1</a>
@@ -38,45 +40,44 @@ export default function Navbar() {
               </ul>
             </li>
             <li>
-              <a>Contato</a>
-            </li>
-            <li>
-              <a>Blog</a>
+              <Link href="/blog">Blog</Link>
             </li>
           </ul>
         </div>
-        <a className="btn btn-ghost text-xl">Adify</a>
+        <Link className="btn btn-ghost text-xl" href="/">
+          Adify
+        </Link>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">
           <li>
-            <a>Sobre</a>
+            <Link href="/sobre">Sobre</Link>
           </li>
           <li>
             <details>
               <summary>Produtos</summary>
               <ul className="p-2 bg-base-200 z-10">
                 <li>
-                  <a>Produto</a>
+                  <Link href="/produtos">Produto</Link>
                 </li>
                 <li>
-                  <a>Produto</a>
+                  <Link href="/produtos">Produto</Link>
                 </li>
               </ul>
             </details>
           </li>
           <li>
-            <a>Contato</a>
-          </li>
-          <li>
-            <a>Blog</a>
+            <a href="/blog">Blog</a>
           </li>
         </ul>
       </div>
       <div className="navbar-end">
-        <a className="btn bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-base-300">
+        <Link
+          href="/contato"
+          className="btn bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-base-300"
+        >
           Contato
-        </a>
+        </Link>
       </div>
     </nav>
   );

@@ -1,8 +1,13 @@
-import { PresentationChartLineIcon } from "@heroicons/react/24/solid";
+import {
+  PresentationChartLineIcon,
+  ChartBarIcon,
+  GlobeAmericasIcon,
+  BanknotesIcon,
+} from "@heroicons/react/24/solid";
 
 export default function AboutPage() {
   return (
-    <section className="my-auto p-4">
+    <section className="my-auto p-4 max-w-[700px] pt-14">
       <article className="flex flex-col gap-4">
         <header>
           <h1 className="text-[2rem] font-bold">Quem somos?</h1>
@@ -36,6 +41,11 @@ export default function AboutPage() {
             Time Adify
             <PresentationChartLineIcon className="h-8" />
           </p>
+          <div className="flex max-h-[150px] text-accent mt-10">
+            <BanknotesIcon />
+            <GlobeAmericasIcon />
+            <ChartBarIcon />
+          </div>
         </footer>
       </article>
     </section>
