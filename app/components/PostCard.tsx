@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function PostCard() {
   return (
-    <div className="card w-full bg-base-300 border-accent border">
+    <div className="card w-full lg:max-w-[380px] bg-base-300 flex-1">
       <figure>
         <Image
           src="https://picsum.photos/700/384"
@@ -17,10 +17,10 @@ export default function PostCard() {
         <p>If a dog chews shoes whose shoes does he choose?</p>
         <div className="card-actions justify-between items-center">
           <div className="flex gap-1">
-            <div className="badge badge-accent badge-outline">#Marketing</div>
-            <div className="badge badge-accent badge-outline">#SEO</div>
+            <div className="badge badge-base-content badge-outline">#Marketing</div>
+            <div className="badge badge-base-content badge-outline">#SEO</div>
           </div>
-          <button className="btn btn-primary">Ler</button>
+          <button className="btn btn-xs btn-primary">Ler mais</button>
         </div>
       </div>
     </div>

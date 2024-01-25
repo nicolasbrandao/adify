@@ -1,11 +1,11 @@
-import ProductCard from "./ProductCard";
+import ProductBlock from "./ProductBlock";
 
 export default function Products() {
   return (
-    <section className="flex flex-col lg:flex-row lg:justify-center mt-8 gap-4 items-center bg-base-100 w-full p-4">
-      <ProductCard />
-      <ProductCard />
-      <ProductCard />
+    <section className="flex flex-col mt-8 gap-4 lg:gap-28 items-center bg-base-content w-full">
+      <ProductBlock />
+      <ProductBlock />
+      <ProductBlock />
     </section>
   );
 }

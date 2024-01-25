@@ -6,7 +6,7 @@ export default function ProductDetails() {
       <div className="flex flex-col gap-4 lg:max-w-[380px] mt-12">
         <h1 className="font-bold text-[2rem]">Título do Produto</h1>
         <p className="font-bold">Lorem ipsum dolor sit amet consectetur!</p>
-        <div className="rounded-2xl p-2 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500">
+        <div className="rounded-2xl p-2 bg-gradient-to-r from-cyan-300 to-gray-200">
           <p className="rounded-xl border-2 border-base-100 bg-base-content text-base-300 p-4">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio quis
             provident pariatur voluptatum voluptate omnis deserunt rerum,

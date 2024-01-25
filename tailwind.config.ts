@@ -8,15 +8,10 @@ const config: Config = {
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-    extend: {
-      backgroundImage: {
-        "gradient-highlight":
-          "radial-gradient( 41.11% 49.93% at 50% 49.93%,  #475c81 0%, #2b3a56  52.26%, #0f172a 100% )",
-      },
-    },
+    extend: {},
   },
   daisyui: {
-    themes: ["night"],
+    themes: ["nord"],
   },
   plugins: [daisy],
 };
