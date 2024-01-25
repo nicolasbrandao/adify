@@ -1,4 +1,4 @@
-import Image from "next/image"
+import Image from "next/image";
 
 export default function ProductDetails() {
   return (
@@ -7,14 +7,31 @@ export default function ProductDetails() {
         <h1 className="font-bold text-[2rem]">Título do Produto</h1>
         <p className="font-bold">Lorem ipsum dolor sit amet consectetur!</p>
         <div className="rounded-2xl p-2 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500">
-          <p className="rounded-xl border-2 border-base-100 bg-base-content text-base-300 p-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio quis provident pariatur voluptatum voluptate omnis deserunt rerum, mollitia vitae sapiente quasi fugiat suscipit debitis tempora enim voluptas distinctio nulla minima.</p>
+          <p className="rounded-xl border-2 border-base-100 bg-base-content text-base-300 p-4">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio quis
+            provident pariatur voluptatum voluptate omnis deserunt rerum,
+            mollitia vitae sapiente quasi fugiat suscipit debitis tempora enim
+            voluptas distinctio nulla minima.
+          </p>
         </div>
-        <p className="rounded-2xl bg-base-300 p-4">Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
-        <p className="rounded-2xl bg-base-300 p-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam eaque atque mollitia eos quod quae, numquam, ullam optio labore beatae esse, voluptas sint possimus corrupti.</p>
+        <p className="rounded-2xl bg-base-300 p-4">
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+        </p>
+        <p className="rounded-2xl bg-base-300 p-4">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam
+          eaque atque mollitia eos quod quae, numquam, ullam optio labore beatae
+          esse, voluptas sint possimus corrupti.
+        </p>
       </div>
       <div className="mockup-window bg-base-300 lg:w-fit h-fit my-auto">
-        <Image src="https://picsum.photos/700/384" width={700} height={384} alt="Shoes" className="object-cover w-full" />
-      </div>   
+        <Image
+          src="https://picsum.photos/700/384"
+          width={700}
+          height={384}
+          alt="Shoes"
+          className="object-cover w-full"
+        />
+      </div>
     </section>
-  )
+  );
 }

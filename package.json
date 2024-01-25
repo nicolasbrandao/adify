@@ -6,11 +6,13 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "prettier --write . && next lint --fix"
   },
   "dependencies": {
     "@heroicons/react": "^2.1.1",
+    "eslint-config-prettier": "^9.1.0",
     "next": "14.0.4",
+    "prettier": "^3.2.4",
     "react": "^18",
     "react-dom": "^18"
   },
