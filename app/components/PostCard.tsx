@@ -17,10 +17,12 @@ export default function PostCard() {
         <p>If a dog chews shoes whose shoes does he choose?</p>
         <div className="card-actions justify-between items-center">
           <div className="flex gap-1">
-            <div className="badge badge-base-content badge-outline">#Marketing</div>
+            <div className="badge badge-base-content badge-outline">
+              #Marketing
+            </div>
             <div className="badge badge-base-content badge-outline">#SEO</div>
           </div>
-          <button className="btn btn-xs btn-primary">Ler mais</button>
+          <button className="btn btn-xs btn-primary text-base-100">Ler mais</button>
         </div>
       </div>
     </div>
