@@ -2,7 +2,7 @@ import PostCard from "../components/PostCard";
 
 export default function BlogPage() {
   return (
-    <section className=" flex flex-col gap-4 mt-20 p-4">
+    <section className=" flex flex-col gap-4 mt-10 p-4">
       <div>
         <label className="form-control w-full">
           <div className="label">

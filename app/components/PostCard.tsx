@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function PostCard() {
   return (
-    <div className="card w-full lg:max-w-[380px] bg-base-300 flex-1">
+    <div className="card w-full bg-neutral text-base-300 lg:max-w-[380px] flex-1">
       <figure>
         <Image
           src="https://picsum.photos/700/384"
@@ -22,7 +22,7 @@ export default function PostCard() {
             </div>
             <div className="badge badge-base-content badge-outline">#SEO</div>
           </div>
-          <button className="btn btn-xs btn-primary text-base-100">Ler mais</button>
+          <button className="btn btn-xs btn-primary">Ler mais</button>
         </div>
       </div>
     </div>

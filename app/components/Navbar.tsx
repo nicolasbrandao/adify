@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function Navbar() {
   return (
-    <nav className="navbar absolute z-10 text-base-100">
+    <nav className="navbar absolute z-10">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -26,6 +26,9 @@ export default function Navbar() {
             className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-primary rounded-box w-52"
           >
             <li>
+              <Link href="/">Home</Link>
+            </li>
+            <li>
               <Link href="/sobre">Sobre</Link>
             </li>
             <li>
@@ -43,25 +46,29 @@ export default function Navbar() {
               <Link href="/produtos">Recursos</Link>
               <ul className="p-2">
                 <li>
-                  <Link href="/blog">
-                    Blog
-                  </Link>
+                  <Link href="/blog">Blog</Link>
                 </li>
                 <li>
-                  <Link href="/materiais">
-                    Materiais
-                  </Link>
+                  <Link href="/materiais">Materiais</Link>
                 </li>
               </ul>
             </li>
           </ul>
         </div>
-        <Link className="btn btn-ghost text-xl bg-gradient-to-r from-cyan-300 to-gray-200 text-transparent bg-clip-text" href="/">
+        <Link
+          className="btn btn-ghost text-xl bg-gradient-to-r from-cyan-300 to-gray-200 text-transparent bg-clip-text"
+          href="/"
+        >
           Adify
         </Link>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">
+          <li className="active:text-red-500">
+            <Link href="/" className="active:text-red-500">
+              Home
+            </Link>
+          </li>
           <li>
             <Link href="/sobre">Sobre</Link>
           </li>
@@ -70,7 +77,9 @@ export default function Navbar() {
               <summary>Produtos</summary>
               <ul className="p-2 bg-primary z-10">
                 <li>
-                  <Link href="/produtos/teste">Produto 1</Link>
+                  <Link href="/produtos/teste" className="text-nowrap w-fit">
+                    Produto 111111111
+                  </Link>
                 </li>
                 <li>
                   <Link href="/produtos/teste">Produto 2</Link>
@@ -89,14 +98,14 @@ export default function Navbar() {
                   <Link href="/materiais">Materiais</Link>
                 </li>
               </ul>
-              </details>
+            </details>
           </li>
         </ul>
       </div>
       <div className="navbar-end">
         <Link
           href="/contato"
-          className="btn bg-gradient-to-r from-cyan-300 to-gray-200 text-primary-content border-none"
+          className="btn bg-gradient-to-r from-cyan-300 to-gray-200 text-base-300 border-none"
         >
           Contato
         </Link>

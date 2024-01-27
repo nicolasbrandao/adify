@@ -20,7 +20,7 @@ export default function RootLayout({
     <html lang="pt-BR">
       <body className={montserrat.className}>
         <Navbar />
-        <main className="flex flex-col items-center min-h-screen bg-base-content">
+        <main className="flex flex-col items-center min-h-screen bg-base-300">
           {children}
         </main>
         <Footer />

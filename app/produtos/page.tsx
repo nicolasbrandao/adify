@@ -1,15 +1,10 @@
 import ProductCard from "../components/ProductBlock";
+import Products from "../components/Products";
 
 export default function ProductsPage() {
   return (
-    <section className="flex gap-12 mt-20 flex-wrap justify-center p-4 w-full max-w-[700px]">
-      <ProductBlock />
-      <div className="divider-horizontal" />
-      <ProductBlock />
-      <div className="divider-horizontal" />
-      <ProductBlock />
-      <div className="divider-horizontal" />
-      <ProductBlock />
+    <section className="flex gap-12 mt-20 flex-wrap justify-center w-full mb-12">
+      <Products />
     </section>
   );
 }

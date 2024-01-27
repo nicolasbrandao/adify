@@ -12,7 +12,9 @@ export default function PostDetails() {
           alt="Shoes"
         />
         <div className="p-4">
-          <h1 className="text-[2rem] font-bold">Título do Post</h1>
+          <h1 className="text-[2rem] font-bold bg-gradient-to-r from-cyan-300 to-gray-200 text-transparent bg-clip-text">
+            Título do Post
+          </h1>
           <h2 className="my-2 font-bold">
             Lorem ipsum dolor sit amet consectetur adipisicing elit.
             Consequuntur quos inventore.
