@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function PostCard() {
   return (
@@ -22,7 +23,9 @@ export default function PostCard() {
             </div>
             <div className="badge badge-base-content badge-outline">#SEO</div>
           </div>
-          <button className="btn btn-xs btn-primary">Ler mais</button>
+          <Link href={"/blog/teste"} className="btn btn-xs btn-primary">
+            Ler mais
+          </Link>
         </div>
       </div>
     </div>

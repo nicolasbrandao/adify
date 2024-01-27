@@ -1,8 +1,8 @@
 import Link from "next/link";
 
 type Props = {
-  button?: boolean
-}
+  button?: boolean;
+};
 
 export default function ProductAccordion({ button = false }: Props) {
   return (
@@ -40,11 +40,14 @@ export default function ProductAccordion({ button = false }: Props) {
           </div>
         </div>
       </div>
-      {button &&
-        <Link href="/produtos/teste" className="btn btn-primary btn-xs m-2 w-fit">
+      {button && (
+        <Link
+          href="/produtos/teste"
+          className="btn btn-primary btn-xs m-2 w-fit"
+        >
           Ler mais
         </Link>
-      }
+      )}
     </div>
   );
 }

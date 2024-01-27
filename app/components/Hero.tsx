@@ -43,7 +43,6 @@ export default function Hero() {
             className="object-cover w-full"
           />
         </div>
-        
       </div>
     </section>
   );

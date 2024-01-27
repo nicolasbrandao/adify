@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Adify - Produto",
-  description: "Adify - Produto",
+  title: "Adify - Materiais",
+  description: "Adify - Materiais",
 };
 
 export default function RootLayout({

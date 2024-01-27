@@ -1,5 +1,6 @@
 import Image from "next/image";
 import classNames from "classnames";
+import Link from "next/link";
 
 type PropsType = {
   reverse?: boolean;
@@ -28,7 +29,12 @@ export default function ProductBlock({ reverse }: PropsType) {
           porro provident rerum corrupti quas repellendus vero, eligendi
           voluptatum. Expedita nesciunt ratione ad?
         </p>
-        <button className="btn btn-primary max-w-[250px]">Ver mais</button>
+        <Link
+          href={"/produtos/teste"}
+          className="btn btn-primary max-w-[250px]"
+        >
+          Ver mais
+        </Link>
       </div>
     </div>
   );

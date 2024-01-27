@@ -35,15 +35,15 @@ export default function Navbar() {
               <Link href="/produtos">Produtos</Link>
               <ul className="p-2">
                 <li>
-                  <a>Marketing</a>
+                  <Link href="/produtos/teste">Marketing</Link>
                 </li>
                 <li>
-                  <a>SEO</a>
+                  <Link href="/produtos/teste">SEO</Link>
                 </li>
               </ul>
             </li>
             <li>
-              <Link href="/produtos">Recursos</Link>
+              <p className="pointer-events-none">Recursos</p>
               <ul className="p-2">
                 <li>
                   <Link href="/blog">Blog</Link>
