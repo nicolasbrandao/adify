@@ -4,7 +4,7 @@ import Logo from "@/public/logo_svg.svg";
 
 export default function Hero() {
   return (
-    <section className="flex flex-col items-center justify-center w-full h-screen pt-14 lg:max-w-[700px] lg:mx-auto">
+    <section className="flex flex-col items-center justify-center w-full min-h-screen pt-14 lg:max-w-[700px] lg:mx-auto">
       <div className=" flex flex-col w-full gap-8 p-4">
         <div>
           <h1 className="font-bold text-[48px] bg-gradient-to-r from-cyan-300 to-gray-200 text-transparent bg-clip-text w-fit">
@@ -40,7 +40,7 @@ export default function Hero() {
             width={700}
             height={384}
             alt="Shoes"
-            className="object-cover w-full"
+            className="object-cover w-full h-fit"
           />
         </div>
       </div>
