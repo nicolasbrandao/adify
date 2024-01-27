@@ -2,7 +2,7 @@ import Image from "next/image";
 
 function Stats() {
   return (
-    <div className="stats stats-vertical lg:stats-horizontal my-20 lg:my-32 bg-base-content">
+    <div className="stats stats-vertical lg:stats-horizontal my-20 lg:my-32 bg-base-300">
       <div className="stat">
         <div className="stat-figure text-primary">
           <svg
@@ -19,9 +19,9 @@ function Stats() {
             ></path>
           </svg>
         </div>
-        <div className="stat-title text-base-100">Total Likes</div>
+        <div className="stat-title">Total Likes</div>
         <div className="stat-value text-primary">25.6K</div>
-        <div className="stat-desc text-base-100">21% more than last month</div>
+        <div className="stat-desc">21% more than last month</div>
       </div>
 
       <div className="stat">
@@ -40,9 +40,9 @@ function Stats() {
             ></path>
           </svg>
         </div>
-        <div className="stat-title text-base-100">Page Views</div>
+        <div className="stat-title">Page Views</div>
         <div className="stat-value text-secondary">2.6M</div>
-        <div className="stat-desc text-base-100">21% more than last month</div>
+        <div className="stat-desc">21% more than last month</div>
       </div>
 
       <div className="stat">
