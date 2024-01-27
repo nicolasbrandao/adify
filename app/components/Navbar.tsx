@@ -35,10 +35,10 @@ export default function Navbar() {
               <Link href="/produtos">Produtos</Link>
               <ul className="p-2">
                 <li>
-                  <a>Produto 1</a>
+                  <a>Marketing</a>
                 </li>
                 <li>
-                  <a>Produto 2</a>
+                  <a>SEO</a>
                 </li>
               </ul>
             </li>
@@ -78,11 +78,11 @@ export default function Navbar() {
               <ul className="p-2 bg-primary z-10">
                 <li>
                   <Link href="/produtos/teste" className="text-nowrap w-fit">
-                    Produto 111111111
+                    Marketing
                   </Link>
                 </li>
                 <li>
-                  <Link href="/produtos/teste">Produto 2</Link>
+                  <Link href="/produtos/teste">SEO</Link>
                 </li>
               </ul>
             </details>

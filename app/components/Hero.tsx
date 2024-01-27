@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import Logo from "@/public/logo_svg.svg";
 
 export default function Hero() {
   return (
@@ -15,7 +16,7 @@ export default function Hero() {
             }
           </p>
         </div>
-        <div className="mt-4">
+        <div>
           <div className="flex justify-between gap-4">
             <Link
               href="/contato"
@@ -42,6 +43,7 @@ export default function Hero() {
             className="object-cover w-full"
           />
         </div>
+        
       </div>
     </section>
   );

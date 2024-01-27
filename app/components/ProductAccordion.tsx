@@ -1,6 +1,10 @@
 import Link from "next/link";
 
-export default function ProductAccordion() {
+type Props = {
+  button?: boolean
+}
+
+export default function ProductAccordion({ button = false }: Props) {
   return (
     <div className="flex flex-col lg:justify-between">
       <div className="w-full mt-10">
@@ -36,9 +40,11 @@ export default function ProductAccordion() {
           </div>
         </div>
       </div>
-      <Link href="/produtos/teste" className="btn btn-primary btn-xs m-2 w-fit">
-        Ler mais
-      </Link>
+      {button &&
+        <Link href="/produtos/teste" className="btn btn-primary btn-xs m-2 w-fit">
+          Ler mais
+        </Link>
+      }
     </div>
   );
 }
