@@ -40,11 +40,23 @@ export default function Navbar() {
               </ul>
             </li>
             <li>
-              <Link href="/blog">Blog</Link>
+              <Link href="/produtos">Recursos</Link>
+              <ul className="p-2">
+                <li>
+                  <Link href="/blog">
+                    Blog
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/materiais">
+                    Materiais
+                  </Link>
+                </li>
+              </ul>
             </li>
           </ul>
         </div>
-        <Link className="btn btn-ghost text-xl" href="/">
+        <Link className="btn btn-ghost text-xl bg-gradient-to-r from-cyan-300 to-gray-200 text-transparent bg-clip-text" href="/">
           Adify
         </Link>
       </div>
@@ -58,16 +70,26 @@ export default function Navbar() {
               <summary>Produtos</summary>
               <ul className="p-2 bg-primary z-10">
                 <li>
-                  <Link href="/produtos">Produto</Link>
+                  <Link href="/produtos/teste">Produto 1</Link>
                 </li>
                 <li>
-                  <Link href="/produtos">Produto</Link>
+                  <Link href="/produtos/teste">Produto 2</Link>
                 </li>
               </ul>
             </details>
           </li>
           <li>
-            <a href="/blog">Blog</a>
+            <details>
+              <summary>Recursos</summary>
+              <ul className="p-2 bg-primary z-10">
+                <li>
+                  <Link href="/blog">Blog</Link>
+                </li>
+                <li>
+                  <Link href="/materiais">Materiais</Link>
+                </li>
+              </ul>
+              </details>
           </li>
         </ul>
       </div>

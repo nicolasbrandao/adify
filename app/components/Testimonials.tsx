@@ -1,19 +1,34 @@
 import Image from "next/image";
+import classNames from "classnames";
 
 export default function Testimonials() {
   return (
     <section className="flex flex-col lg:flex-row lg:justify-center gap-6 items-center w-full p-4">
       <TestimonialCard />
-      <TestimonialCard />
+      <TestimonialCard reverse/>
       <TestimonialCard />
     </section>
   );
 }
 
-function TestimonialCard() {
+type TestimonialCardProps = {
+  reverse?: boolean
+}
+
+function TestimonialCard({ reverse }: TestimonialCardProps) {
+  const chatBubbleContainer = classNames(
+    "chat my-auto",
+    reverse? "chat-end lg:chat-start" : "chat-start"
+  )
+  
+  const chatName = classNames(
+    "card-title text-secondary",
+    reverse && "self-end lg:self-start"
+  )
+
   return (
-    <div className="w-[350px] bg-base-content text-base-300">
-      <div className="chat chat-start my-auto">
+    <div className="flex flex-col lg:max-w-[300px] bg-base-content text-base-300">
+      <div className={chatBubbleContainer}>
         <div className="chat-image avatar">
           <div className="w-14 rounded-full">
             <Image
@@ -24,13 +39,13 @@ function TestimonialCard() {
             />
           </div>
         </div>
-        <div className="chat-bubble w-[300px] lg:w-fit">
+        <div className="chat-bubble w-fit">
           Not leave it in Darkness. Lorem ipsum dolor sit, amet consectetur
           adipisicing elit. Mollitia dolores aliquid perferendis esse ipsa
           incidunt. Porro, fuga, assumenda.
         </div>
       </div>
-      <h2 className="card-title text-secondary">Mary Jane</h2>
+      <h2 className={chatName}>Mary Jane</h2>
     </div>
   );
 }

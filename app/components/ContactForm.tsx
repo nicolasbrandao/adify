@@ -3,7 +3,7 @@ import { PaperAirplaneIcon } from "@heroicons/react/24/solid";
 export default function ContactForm() {
   return (
     <section className="p-4 my-8">
-      <h1 className="text-[2rem] font-bold w-[300px] text-primary">
+      <h1 className="text-[2rem] font-bold w-[300px] bg-gradient-to-r from-cyan-300 to-gray-200 text-transparent bg-clip-text">
         Preencha o fomulário e entraremos em contato!
       </h1>
       <form className="flex flex-col gap-4">
