@@ -1,6 +1,7 @@
 "use client";
 
 import { PaperAirplaneIcon } from "@heroicons/react/24/solid";
+import { CheckCircleIcon } from "@heroicons/react/24/outline";
 import {
   ContactForm as ContactFormType,
   contactFormSchema,
@@ -13,7 +14,7 @@ export default function ContactForm() {
     register,
     handleSubmit,
     reset,
-    formState: { errors },
+    formState: { errors, isSubmitSuccessful, isLoading },
   } = useForm<ContactFormType>({
     resolver: zodResolver(contactFormSchema.strict()),
   });
@@ -34,6 +35,12 @@ export default function ContactForm() {
       <h1 className="w-[300px] bg-gradient-to-r from-cyan-300 to-gray-200 bg-clip-text text-[2rem] font-bold text-transparent">
         Preencha o fomulário e entraremos em contato!
       </h1>
+      {isSubmitSuccessful && (
+        <div className="badge badge-success gap-2 text-base-300">
+          <CheckCircleIcon className="h-[15px] text-base-300" />
+          Enviado com sucesso!
+        </div>
+      )}
       <form className="flex flex-col gap-4" onSubmit={handleSubmit(onSubmit)}>
         <label className="form-control w-full max-w-xs" htmlFor="name">
           <div className="label">
@@ -46,6 +53,9 @@ export default function ContactForm() {
             className="input-bordered input w-full max-w-xs border-primary bg-base-100 focus:border-primary"
             {...register("name")}
           />
+          {errors.name && (
+            <p className="text-sm text-red-500">{errors.name.message}</p>
+          )}
         </label>
         <label className="form-control w-full max-w-xs" htmlFor="email">
           <div className="label">
@@ -58,6 +68,9 @@ export default function ContactForm() {
             className="input-bordered input w-full max-w-xs border-primary bg-base-100 focus:border-primary"
             {...register("email")}
           />
+          {errors.email && (
+            <p className="text-sm text-red-500">{errors.email.message}</p>
+          )}
         </label>
         <label className="form-control w-full max-w-xs" htmlFor="phone">
           <div className="label">
@@ -70,6 +83,9 @@ export default function ContactForm() {
             className="input-bordered input w-full max-w-xs border-primary bg-base-100 focus:border-primary"
             {...register("phone")}
           />
+          {errors.phone && (
+            <p className="text-sm text-red-500">{errors.phone.message}</p>
+          )}
         </label>
         <label className="form-control w-full max-w-xs" htmlFor="company">
           <div className="label">
@@ -82,6 +98,9 @@ export default function ContactForm() {
             className="input-bordered input w-full max-w-xs border-primary bg-base-100 focus:border-primary"
             {...register("company")}
           />
+          {errors.company && (
+            <p className="text-sm text-red-500">{errors.company.message}</p>
+          )}
         </label>
         <label className="form-control w-full max-w-xs" htmlFor="position">
           <div className="label">
@@ -94,12 +113,15 @@ export default function ContactForm() {
             className="input-bordered input w-full max-w-xs border-primary bg-base-100 focus:border-primary"
             {...register("position")}
           />
+          {errors.position && (
+            <p className="text-sm text-red-500">{errors.position.message}</p>
+          )}
         </label>
         <button
           className="btn mt-4 w-full border-none bg-gradient-to-r from-cyan-300 to-gray-200 text-base-300"
           type="submit"
         >
-          Enviar <PaperAirplaneIcon className="h-5" />
+          Enviar {isLoading ? "load" : <PaperAirplaneIcon className="h-5" />}
         </button>
       </form>
     </section>
