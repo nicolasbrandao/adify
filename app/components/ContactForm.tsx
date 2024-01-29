@@ -9,8 +9,11 @@ import {
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm, SubmitHandler, FieldValues } from "react-hook-form";
 import { useHookFormMask } from "use-mask-input";
+import { useState } from "react";
 
 export default function ContactForm() {
+  const [submitError, setSubmitError] = useState(false);
+
   const {
     register,
     handleSubmit,
@@ -22,14 +25,20 @@ export default function ContactForm() {
   const registerWithMask = useHookFormMask(register);
 
   const onSubmit: SubmitHandler<FieldValues> = async (data) => {
-    await fetch("/api/sheets", {
+    const res = await fetch("/api/sheets", {
       method: "POST",
       body: JSON.stringify(data),
       headers: {
         "Content-Type": "application/json",
       },
     });
-    reset();
+
+    if (res.ok) {
+      setSubmitError(false);
+      reset();
+    } else {
+      setSubmitError(true);
+    }
   };
 
   return (
@@ -37,11 +46,15 @@ export default function ContactForm() {
       <h1 className="w-[300px] bg-gradient-to-r from-cyan-300 to-gray-200 bg-clip-text text-[2rem] font-bold text-transparent">
         Preencha o fomulário e entraremos em contato!
       </h1>
-      {isSubmitSuccessful && (
-        <div className="badge badge-success gap-2 text-base-300">
-          <CheckCircleIcon className="h-[15px] text-base-300" />
-          Enviado com sucesso!
-        </div>
+      {submitError ? (
+        <p className="text-sm text-red-500">Erro ao enviar formulário.</p>
+      ) : (
+        isSubmitSuccessful && (
+          <div className="badge badge-success gap-2 text-base-300">
+            <CheckCircleIcon className="h-[15px] text-base-300" />
+            Enviado com sucesso!
+          </div>
+        )
       )}
       <form className="flex flex-col gap-4" onSubmit={handleSubmit(onSubmit)}>
         <label className="form-control w-full max-w-xs" htmlFor="name">

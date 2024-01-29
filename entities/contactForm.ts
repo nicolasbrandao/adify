@@ -10,10 +10,11 @@ export const contactFormSchema = z.object({
   phone: z
     .string()
     .min(1, { message: "Por favor, informe seu telefone." })
-    .transform(parsePhoneNumber)
-    .refine((val) => val.length <= 12, {
-      message: "Telefone não pode ter mais que 12 digitos",
-    }),
+    .max(16)
+    .refine((val) => parsePhoneNumber(val).length === 11, {
+      message: "Telefone deve ter 12 digitos",
+    })
+    .transform(parsePhoneNumber),
   company: z
     .string()
     .min(1, { message: "Por favor, informe o nome da empresa." })
