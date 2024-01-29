@@ -5,7 +5,7 @@ export default function Navbar() {
     <nav className="navbar absolute z-10">
       <div className="navbar-start">
         <div className="dropdown">
-          <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
+          <div tabIndex={0} role="button" className="btn-ghost btn lg:hidden">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-5 w-5"
@@ -23,7 +23,7 @@ export default function Navbar() {
           </div>
           <ul
             tabIndex={0}
-            className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-primary rounded-box w-52"
+            className="dropdown-content menu menu-sm z-[1] mt-3 w-52 rounded-box bg-primary p-2 shadow"
           >
             <li>
               <Link href="/">Home</Link>
@@ -56,7 +56,7 @@ export default function Navbar() {
           </ul>
         </div>
         <Link
-          className="btn btn-ghost text-xl bg-gradient-to-r from-cyan-300 to-gray-200 text-transparent bg-clip-text"
+          className="btn-ghost btn bg-gradient-to-r from-cyan-300 to-gray-200 bg-clip-text text-xl text-transparent"
           href="/"
         >
           Adify
@@ -75,7 +75,7 @@ export default function Navbar() {
           <li>
             <details>
               <summary>Produtos</summary>
-              <ul className="p-2 bg-primary z-10">
+              <ul className="z-10 bg-primary p-2">
                 <li>
                   <Link href="/produtos/teste" className="text-nowrap w-fit">
                     Marketing
@@ -84,13 +84,16 @@ export default function Navbar() {
                 <li>
                   <Link href="/produtos/teste">SEO</Link>
                 </li>
+                <li>
+                  <Link href="/produtos">Ver todos</Link>
+                </li>
               </ul>
             </details>
           </li>
           <li>
             <details>
               <summary>Recursos</summary>
-              <ul className="p-2 bg-primary z-10">
+              <ul className="z-10 bg-primary p-2">
                 <li>
                   <Link href="/blog">Blog</Link>
                 </li>
@@ -105,7 +108,7 @@ export default function Navbar() {
       <div className="navbar-end">
         <Link
           href="/contato"
-          className="btn bg-gradient-to-r from-cyan-300 to-gray-200 text-base-300 border-none"
+          className="btn border-none bg-gradient-to-r from-cyan-300 to-gray-200 text-base-300"
         >
           Contato
         </Link>

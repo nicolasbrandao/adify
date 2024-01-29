@@ -7,7 +7,7 @@ import {
 
 export default function About() {
   return (
-    <section className="my-auto p-4 max-w-[700px] pt-14">
+    <section className="my-auto max-w-[700px] p-4 pt-14">
       <article className="flex flex-col gap-4">
         <header>
           <h1 className="text-[2rem] font-bold">Quem somos?</h1>
@@ -37,11 +37,11 @@ export default function About() {
           Neque voluptate expedita quibusdam?
         </p>
         <footer>
-          <p className="flex gap-4 items-center font-bold italic">
+          <p className="flex items-center gap-4 font-bold italic">
             Time Adify
             <PresentationChartLineIcon className="h-8" />
           </p>
-          <div className="flex max-h-[150px] text-accent mt-10">
+          <div className="mt-10 flex max-h-[150px] text-accent">
             <BanknotesIcon />
             <GlobeAmericasIcon />
             <ChartBarIcon />

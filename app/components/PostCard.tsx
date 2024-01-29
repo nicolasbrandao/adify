@@ -3,27 +3,27 @@ import Link from "next/link";
 
 export default function PostCard() {
   return (
-    <div className="card w-full bg-neutral text-base-300 lg:max-w-[380px] flex-1">
+    <div className="card w-[325px] bg-neutral text-base-300">
       <figure>
         <Image
           src="https://picsum.photos/700/384"
           width={700}
           height={384}
           alt="Shoes"
-          className="w-full h-[384px] object-cover"
+          className="h-[384px] w-full object-cover"
         />
       </figure>
       <div className="card-body">
         <h2 className="card-title">Este é o título de um post!</h2>
         <p>If a dog chews shoes whose shoes does he choose?</p>
-        <div className="card-actions justify-between items-center">
+        <div className="card-actions items-center justify-between">
           <div className="flex gap-1">
-            <div className="badge badge-base-content badge-outline">
+            <div className="badge-base-content badge badge-outline">
               #Marketing
             </div>
-            <div className="badge badge-base-content badge-outline">#SEO</div>
+            <div className="badge-base-content badge badge-outline">#SEO</div>
           </div>
-          <Link href={"/blog/teste"} className="btn btn-xs btn-primary">
+          <Link href={"/blog/teste"} className="btn-primary btn btn-xs">
             Ler mais
           </Link>
         </div>

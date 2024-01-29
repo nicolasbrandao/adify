@@ -3,7 +3,7 @@ import classNames from "classnames";
 
 export default function Testimonials() {
   return (
-    <section className="flex flex-col lg:flex-row lg:justify-center gap-6 items-center w-full p-4">
+    <section className="flex w-full flex-col items-center gap-6 p-4 lg:flex-row lg:justify-center">
       <TestimonialCard />
       <TestimonialCard reverse />
       <TestimonialCard />

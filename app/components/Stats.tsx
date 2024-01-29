@@ -2,14 +2,14 @@ import Image from "next/image";
 
 function Stats() {
   return (
-    <div className="stats stats-vertical lg:stats-horizontal my-20 lg:my-32 bg-base-300">
+    <div className="stats stats-vertical my-20 bg-base-300 lg:stats-horizontal lg:my-32">
       <div className="stat">
         <div className="stat-figure text-primary">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"
-            className="inline-block w-8 h-8 stroke-current"
+            className="inline-block h-8 w-8 stroke-current"
           >
             <path
               strokeLinecap="round"
@@ -30,7 +30,7 @@ function Stats() {
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"
-            className="inline-block w-8 h-8 stroke-current"
+            className="inline-block h-8 w-8 stroke-current"
           >
             <path
               strokeLinecap="round"
@@ -47,7 +47,7 @@ function Stats() {
 
       <div className="stat">
         <div className="stat-figure text-secondary">
-          <div className="avatar online">
+          <div className="online avatar">
             <div className="w-16 rounded-full">
               <Image
                 src="https://picsum.photos/64/64"

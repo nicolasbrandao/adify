@@ -41,7 +41,7 @@ function ResourceBlock({ reverse }: ResourceBlockProps) {
       />
       <div className={textContainer}>
         <h2 className="text-[2rem]">Este é um material!</h2>
-        <p className="text-[2.5rem] bg-gradient-to-r from-cyan-300 to-gray-200 text-transparent bg-clip-text">
+        <p className="bg-gradient-to-r from-cyan-300 to-gray-200 bg-clip-text text-[2.5rem] text-transparent">
           ACESSO GRATUITO
         </p>
         <p>
@@ -50,7 +50,7 @@ function ResourceBlock({ reverse }: ResourceBlockProps) {
           porro provident rerum corrupti quas repellendus vero, eligendi
           voluptatum. Expedita nesciunt ratione ad?
         </p>
-        <Link href={"#"} className="btn btn-primary max-w-[250px] flex">
+        <Link href={"#"} className="btn-primary btn flex max-w-[250px]">
           Download
           <ArrowDownTrayIcon className="h-6" />
         </Link>
