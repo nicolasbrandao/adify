@@ -19,6 +19,7 @@
     "react": "^18",
     "react-dom": "^18",
     "react-hook-form": "^7.49.3",
+    "use-mask-input": "^3.3.7",
     "zod": "^3.22.4"
   },
   "devDependencies": {
