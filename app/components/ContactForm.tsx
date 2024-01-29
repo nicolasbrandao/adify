@@ -8,19 +8,21 @@ import {
 } from "@/entities/contactForm";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm, SubmitHandler, FieldValues } from "react-hook-form";
+import { useHookFormMask } from "use-mask-input";
 
 export default function ContactForm() {
   const {
     register,
     handleSubmit,
     reset,
-    formState: { errors, isSubmitSuccessful, isLoading },
+    formState: { errors, isSubmitSuccessful, isSubmitting },
   } = useForm<ContactFormType>({
     resolver: zodResolver(contactFormSchema.strict()),
   });
+  const registerWithMask = useHookFormMask(register);
 
-  const onSubmit: SubmitHandler<FieldValues> = (data) => {
-    fetch("/api/sheets", {
+  const onSubmit: SubmitHandler<FieldValues> = async (data) => {
+    await fetch("/api/sheets", {
       method: "POST",
       body: JSON.stringify(data),
       headers: {
@@ -78,10 +80,9 @@ export default function ContactForm() {
           </div>
           <input
             type="tel"
-            id="phone"
-            placeholder="(DDD) 9 9999 9999"
+            {...registerWithMask("phone", ["(99) 9 9999 9999"])}
+            placeholder="(99) 9 9999 9999"
             className="input-bordered input w-full max-w-xs border-primary bg-base-100 focus:border-primary"
-            {...register("phone")}
           />
           {errors.phone && (
             <p className="text-sm text-red-500">{errors.phone.message}</p>
@@ -121,7 +122,12 @@ export default function ContactForm() {
           className="btn mt-4 w-full border-none bg-gradient-to-r from-cyan-300 to-gray-200 text-base-300"
           type="submit"
         >
-          Enviar {isLoading ? "load" : <PaperAirplaneIcon className="h-5" />}
+          Enviar{" "}
+          {isSubmitting ? (
+            <span className="loading loading-spinner loading-sm" />
+          ) : (
+            <PaperAirplaneIcon className="h-5" />
+          )}
         </button>
       </form>
     </section>
