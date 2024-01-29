@@ -6,32 +6,32 @@ type Props = {
 
 export default function ProductAccordion({ button = false }: Props) {
   return (
-    <div className="flex flex-col lg:justify-between">
-      <div className="w-full mt-10">
-        <h2 className="text-accent my-1 mx-4 text-xl">Título de um Produto</h2>
+    <div className="mb-10 flex flex-col lg:justify-between">
+      <div className="mt-10 w-full">
+        <h2 className="mx-4 my-1 text-xl text-accent">Título de um Produto</h2>
         <div className="border-b border-slate-500">
-          <div className="collapse collapse-arrow border-t border-slate-500 rounded-none">
+          <div className="collapse-arrow collapse rounded-none border-t border-slate-500">
             <input type="radio" name="my-accordion-2" />
             <div className="collapse-title">Click to open this</div>
             <div className="collapse-content">
               <p>hello</p>
             </div>
           </div>
-          <div className="collapse collapse-arrow border-t border-slate-500 rounded-none">
+          <div className="collapse-arrow collapse rounded-none border-t border-slate-500">
             <input type="radio" name="my-accordion-2" />
             <div className="collapse-title">Click to open this</div>
             <div className="collapse-content">
               <p>hello</p>
             </div>
           </div>
-          <div className="collapse collapse-arrow border-t border-slate-500 rounded-none">
+          <div className="collapse-arrow collapse rounded-none border-t border-slate-500">
             <input type="radio" name="my-accordion-2" />
             <div className="collapse-title">Click to open this</div>
             <div className="collapse-content">
               <p>hello</p>
             </div>
           </div>
-          <div className="collapse collapse-arrow border-t border-slate-500 rounded-none">
+          <div className="collapse-arrow collapse rounded-none border-t border-slate-500">
             <input type="radio" name="my-accordion-2" />
             <div className="collapse-title">Click to open this</div>
             <div className="collapse-content">
@@ -43,7 +43,7 @@ export default function ProductAccordion({ button = false }: Props) {
       {button && (
         <Link
           href="/produtos/teste"
-          className="btn btn-primary btn-xs m-2 w-fit"
+          className="btn-primary btn btn-xs m-2 w-fit"
         >
           Ler mais
         </Link>

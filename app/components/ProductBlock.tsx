@@ -1,6 +1,7 @@
 import Image from "next/image";
 import classNames from "classnames";
 import Link from "next/link";
+import ProductAccordion from "./ProductAccordion";
 
 type PropsType = {
   reverse?: boolean;
@@ -19,7 +20,7 @@ export default function ProductBlock({ reverse }: PropsType) {
         width={700}
         height={384}
         alt="Shoes"
-        className="w-full h-[384px] object-cover"
+        className="h-[384px] w-full object-cover"
       />
       <div className="flex flex-col gap-4 p-4">
         <h2 className="text-[2rem]">Este é um produto!</h2>
@@ -31,10 +32,13 @@ export default function ProductBlock({ reverse }: PropsType) {
         </p>
         <Link
           href={"/produtos/teste"}
-          className="btn btn-primary max-w-[250px]"
+          className="btn-primary btn max-w-[250px]"
         >
           Ver mais
         </Link>
+      </div>
+      <div className="lg:hidden">
+        <ProductAccordion />
       </div>
     </div>
   );

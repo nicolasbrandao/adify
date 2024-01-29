@@ -2,25 +2,25 @@ import Image from "next/image";
 
 export default function PostDetails() {
   return (
-    <section className="flex flex-col mt-16 mb-8 lg:max-w-[700px]">
+    <section className="mb-8 mt-16 flex flex-col lg:max-w-[700px]">
       <header>
         <Image
-          className="lg:rounded-b-xl w-full"
+          className="w-full lg:rounded-b-xl"
           src="https://picsum.photos/700/384"
           width={700}
           height={384}
           alt="Shoes"
         />
         <div className="p-4">
-          <h1 className="text-[2rem] font-bold bg-gradient-to-r from-cyan-300 to-gray-200 text-transparent bg-clip-text">
+          <h1 className="bg-gradient-to-r from-cyan-300 to-gray-200 bg-clip-text text-[2rem] font-bold text-transparent">
             Título do Post
           </h1>
           <h2 className="my-2 font-bold">
             Lorem ipsum dolor sit amet consectetur adipisicing elit.
             Consequuntur quos inventore.
           </h2>
-          <p className="italic text-sm">Nome do Autor do Post</p>
-          <p className="italic text-xs">1 de janeiro de 2024</p>
+          <p className="text-sm italic">Nome do Autor do Post</p>
+          <p className="text-xs italic">1 de janeiro de 2024</p>
         </div>
       </header>
       <article>

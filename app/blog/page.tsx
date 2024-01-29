@@ -2,13 +2,13 @@ import PostCard from "../components/PostCard";
 
 export default function BlogPage() {
   return (
-    <section className=" flex flex-col gap-4 mt-10 p-4">
-      <div>
+    <section className="mt-10 flex flex-col items-center gap-4 p-4">
+      <div className="lg:max-w-[700px]">
         <label className="form-control w-full">
           <div className="label">
             <span className="label-text">Categoria</span>
           </div>
-          <select className="select select-bordered">
+          <select className="select-bordered select">
             <option disabled selected>
               Pick one
             </option>
@@ -21,7 +21,7 @@ export default function BlogPage() {
         </label>
       </div>
 
-      <div className="flex flex-col gap-4">
+      <div className="my-auto flex max-w-[1024px] flex-col flex-wrap gap-4 lg:flex-row">
         <PostCard />
         <PostCard />
         <PostCard />
