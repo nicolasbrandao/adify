@@ -5,7 +5,6 @@ import { z } from "zod";
 export async function POST(req: Request) {
   try {
     const data: ContactForm = await req.json();
-
     contactFormSchema.parse(data);
 
     const auth = new google.auth.GoogleAuth({
