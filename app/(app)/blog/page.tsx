@@ -9,9 +9,7 @@ export default function BlogPage() {
             <span className="label-text">Categoria</span>
           </div>
           <select className="select-bordered select">
-            <option disabled selected>
-              Pick one
-            </option>
+            <option>Todas</option>
             <option>Star Wars</option>
             <option>Harry Potter</option>
             <option>Lord of the Rings</option>
