@@ -40,7 +40,7 @@ function TestimonialCard({ reverse }: TestimonialCardProps) {
             />
           </div>
         </div>
-        <div className="chat-bubble w-fit bg-base-100 text-base-content">
+        <div className="chat-bubble w-fit bg-base-100 text-base-content lg:rounded-br-lg">
           Not leave it in Darkness. Lorem ipsum dolor sit, amet consectetur
           adipisicing elit. Mollitia dolores aliquid perferendis esse ipsa
           incidunt. Porro, fuga, assumenda.
