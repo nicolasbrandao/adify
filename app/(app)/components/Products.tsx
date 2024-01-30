@@ -1,3 +1,4 @@
+import React from "react";
 import ProductBlock from "./ProductBlock";
 import ProductsMenu from "./ProductsMenu";
 

@@ -1,3 +1,4 @@
+import React from "react";
 import ProductAccordion from "./ProductAccordion";
 
 export default function ProductsMenu() {

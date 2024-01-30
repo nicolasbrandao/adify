@@ -5,11 +5,11 @@ import { CheckCircleIcon } from "@heroicons/react/24/outline";
 import {
   ContactForm as ContactFormType,
   contactFormSchema,
-} from "@/entities/contactForm";
+} from "../../../entities/contactForm";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm, SubmitHandler, FieldValues } from "react-hook-form";
 import { useHookFormMask } from "use-mask-input";
-import { useState } from "react";
+import React, { useState } from "react";
 
 export default function ContactForm() {
   const [submitError, setSubmitError] = useState(false);

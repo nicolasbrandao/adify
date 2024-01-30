@@ -1,3 +1,5 @@
+import React from "react";
+
 function Footer() {
   return (
     <footer className="footer footer-center border-t border-accent bg-base-300 p-10">
