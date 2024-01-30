@@ -6,7 +6,7 @@ import Link from "next/link";
 
 export default function Resources() {
   return (
-    <section className="flex flex-col max-w-[1024px]">
+    <section className="flex max-w-[1024px] flex-col">
       <ResourceBlock />
       <ResourceBlock reverse />
       <ResourceBlock />
