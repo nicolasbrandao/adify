@@ -1,4 +1,4 @@
-import ProductDetails from "@/app/components/ProductDetails";
+import ProductDetails from "../../components/ProductDetails";
 
 export default function ProductDetailsPage() {
   return (
