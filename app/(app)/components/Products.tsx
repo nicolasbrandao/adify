@@ -4,11 +4,13 @@ import ProductsMenu from "./ProductsMenu";
 
 export default function Products() {
   return (
-    <section className="mt-8 flex w-full flex-col items-center gap-4 lg:gap-28">
-      <ProductBlock />
-      <ProductBlock reverse />
-      <ProductBlock />
-      <ProductBlock reverse />
+    <section className="mt-8 flex w-full flex-col items-center">
+      <div className="mb-8 flex w-full max-w-[1024px] flex-col items-center lg:gap-28">
+        <ProductBlock />
+        <ProductBlock reverse />
+        <ProductBlock />
+        <ProductBlock reverse />
+      </div>
       <ProductsMenu />
     </section>
   );

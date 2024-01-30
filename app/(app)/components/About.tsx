@@ -5,6 +5,8 @@ import {
   GlobeAmericasIcon,
   BanknotesIcon,
 } from "@heroicons/react/24/solid";
+import Image from "next/image";
+import Logo from "@/public/logo_transparent.png";
 
 export default function About() {
   return (
@@ -40,7 +42,7 @@ export default function About() {
         <footer>
           <p className="flex items-center gap-4 font-bold italic">
             Time Adify
-            <PresentationChartLineIcon className="h-8" />
+            <Image src={Logo} height={32} width={32} alt="Logo Adify" />
           </p>
           <div className="mt-10 flex max-h-[150px] text-accent">
             <BanknotesIcon />

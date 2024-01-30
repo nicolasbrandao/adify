@@ -1,6 +1,7 @@
 import React from "react";
-
+import Image from "next/image";
 import Link from "next/link";
+import Logo from "@/public/logo_transparent.png";
 
 export default function Navbar() {
   return (
@@ -61,6 +62,7 @@ export default function Navbar() {
           className="btn-ghost btn bg-gradient-to-r from-cyan-300 to-gray-200 bg-clip-text text-xl text-transparent"
           href="/"
         >
+          <Image src={Logo} height={20} width={20} alt="Adify logo" />
           Adify
         </Link>
       </div>
