@@ -35,7 +35,7 @@ export default function Navbar() {
               <Link href="/sobre">Sobre</Link>
             </li>
             <li>
-              <Link href="/produtos">Produtos</Link>
+              <Link href="/produtos">Serviços</Link>
               <ul className="p-2">
                 <li>
                   <Link href="/produtos/teste">Marketing</Link>
@@ -78,7 +78,7 @@ export default function Navbar() {
           </li>
           <li>
             <details>
-              <summary>Produtos</summary>
+              <summary>Serviços</summary>
               <ul className="z-10 bg-primary p-2">
                 <li>
                   <Link href="/produtos/teste" className="text-nowrap w-fit">
