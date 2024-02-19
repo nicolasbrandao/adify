@@ -7,19 +7,26 @@ import {
   contactFormSchema,
 } from "../../../entities/contactForm";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useForm, SubmitHandler, FieldValues } from "react-hook-form";
+import {
+  useForm,
+  SubmitHandler,
+  FieldValues,
+  UseFormReturn,
+} from "react-hook-form";
 import { useHookFormMask } from "use-mask-input";
 import React, { useState } from "react";
+import { useRouter } from "next/navigation";
 
 export default function ContactForm() {
   const [submitError, setSubmitError] = useState(false);
+  const router = useRouter();
 
   const {
     register,
     handleSubmit,
     reset,
     formState: { errors, isSubmitSuccessful, isSubmitting },
-  } = useForm<ContactFormType>({
+  }: UseFormReturn<ContactFormType> = useForm<ContactFormType>({
     resolver: zodResolver(contactFormSchema.strict()),
   });
   const registerWithMask = useHookFormMask(register);
@@ -36,6 +43,7 @@ export default function ContactForm() {
     if (res.ok) {
       setSubmitError(false);
       reset();
+      router.push("/obrigado");
     } else {
       setSubmitError(true);
     }
@@ -65,6 +73,7 @@ export default function ContactForm() {
             type="text"
             id="name"
             placeholder="Informe seu nome"
+            autoComplete="on"
             className="input-bordered input w-full max-w-xs border-primary bg-base-100 focus:border-primary"
             {...register("name")}
           />
@@ -80,6 +89,7 @@ export default function ContactForm() {
             type="email"
             id="email"
             placeholder="exemplo@email.com"
+            autoComplete="on"
             className="input-bordered input w-full max-w-xs border-primary bg-base-100 focus:border-primary"
             {...register("email")}
           />
@@ -95,6 +105,8 @@ export default function ContactForm() {
             type="tel"
             {...registerWithMask("phone", ["(99) 9 9999 9999"])}
             placeholder="(99) 9 9999 9999"
+            autoComplete="on"
+            id="phone"
             className="input-bordered input w-full max-w-xs border-primary bg-base-100 focus:border-primary"
           />
           {errors.phone && (
@@ -109,6 +121,7 @@ export default function ContactForm() {
             type="text"
             id="company"
             placeholder="Nome da empresa"
+            autoComplete="on"
             className="input-bordered input w-full max-w-xs border-primary bg-base-100 focus:border-primary"
             {...register("company")}
           />
@@ -124,6 +137,7 @@ export default function ContactForm() {
             type="text"
             id="position"
             placeholder="Seu cargo na empresa"
+            autoComplete="on"
             className="input-bordered input w-full max-w-xs border-primary bg-base-100 focus:border-primary"
             {...register("position")}
           />

@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import Image from "next/image";
 import classNames from "classnames";
@@ -5,6 +7,7 @@ import Link from "next/link";
 import ProductAccordion from "./ProductAccordion";
 import { Service } from "@/types/types";
 import { urlForImage } from "@/sanity/lib/image";
+import makeServiceColor from "@/app/utils/makeServiceColor";
 
 type PropsType = {
   service: Service;
@@ -13,11 +16,13 @@ type PropsType = {
 
 export default function ProductBlock({ service, reverse }: PropsType) {
   const mainContainer = classNames(
-    "flex flex-col lg:items-center",
+    "flex flex-col lg:items-center w-full",
     reverse ? "lg:flex-row-reverse" : "lg:flex-row",
   );
+
   const descriptionContainer = classNames(
-    `rounded-2xl bg-gradient-to-r from-${service.color}-300 to-gray-200 p-2`,
+    "rounded-2xl bg-gradient-to-r to-gray-200 p-2",
+    makeServiceColor(service.color),
   );
 
   return (
@@ -27,7 +32,7 @@ export default function ProductBlock({ service, reverse }: PropsType) {
         width={700}
         height={384}
         alt={service.title}
-        className="lg:h-[384px] lg:w-full lg:object-cover"
+        className="w-full lg:h-[384px] lg:object-cover"
       />
       <div className="flex flex-col gap-4 p-4">
         <h2 className="text-[2rem]">{service.title}</h2>
@@ -43,7 +48,7 @@ export default function ProductBlock({ service, reverse }: PropsType) {
           Ver mais
         </Link>
       </div>
-      <div className="lg:hidden">
+      <div className="flex w-full lg:hidden">
         <ProductAccordion service={service} />
       </div>
     </div>

@@ -2,9 +2,9 @@ import React from "react";
 import Image from "next/image";
 import ProductAccordion from "./ProductAccordion";
 import { Service } from "@/types/types";
-import service from "@/sanity/schemas/service.schema";
 import classNames from "classnames";
 import { urlForImage } from "@/sanity/lib/image";
+import makeServiceColor from "@/app/utils/makeServiceColor";
 
 type Props = {
   service: Service;
@@ -12,10 +12,11 @@ type Props = {
 
 export default function ProductDetails({ service }: Props) {
   const descriptionContainer = classNames(
-    `rounded-2xl bg-gradient-to-r from-${service.color}-300 to-gray-200 p-2`,
+    `rounded-2xl bg-gradient-to-r to-gray-200 p-2`,
+    makeServiceColor(service.color),
   );
   return (
-    <section className="my-auto flex flex-col gap-4 p-4">
+    <section className="my-auto mt-14 flex flex-col gap-4 p-4">
       <div className="flex flex-col gap-4 lg:flex-row">
         <div className="mt-12 flex flex-col gap-4 lg:max-w-[380px]">
           <h1 className="bg-gradient-to-r from-cyan-300 to-gray-200 bg-clip-text text-[2rem] font-bold text-transparent">

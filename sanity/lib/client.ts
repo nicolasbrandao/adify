@@ -9,6 +9,8 @@ import {
   Stats,
   Service,
   Resource,
+  PrivacyPolicy,
+  ThankYou,
 } from "@/types/types";
 
 export const client = createClient({
@@ -163,6 +165,28 @@ class SanityDAO {
       .catch((err) => {
         console.error("ERROR: ", err);
         return [];
+      });
+  }
+
+  async fetchPrivacyPolicy(): Promise<PrivacyPolicy[]> {
+    return await client
+      .fetch("*[_type == 'privacyPolicy']")
+      .then((about) => {
+        return about;
+      })
+      .catch((err) => {
+        console.error("ERROR: ", err);
+      });
+  }
+
+  async fetchThankYou(): Promise<ThankYou[]> {
+    return await client
+      .fetch("*[_type == 'thankYou']")
+      .then((about) => {
+        return about;
+      })
+      .catch((err) => {
+        console.error("ERROR: ", err);
       });
   }
 }

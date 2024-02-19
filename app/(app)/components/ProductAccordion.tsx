@@ -9,15 +9,15 @@ type Props = {
 
 export default function ProductAccordion({ service, button = false }: Props) {
   return (
-    <div className="mb-10 flex flex-col lg:w-[250px] lg:justify-between">
+    <div className="mb-10 flex flex-1 flex-col lg:justify-between">
       <div className="mt-10 w-full">
         <h2 className="mx-4 my-1 text-xl text-accent">
           Produtos em {service.title}
         </h2>
         <div className="border-b border-slate-500">
-          {service.products.map((product) => (
+          {service.products.map((product, index) => (
             <div
-              key={product._id}
+              key={index}
               className="collapse-arrow collapse rounded-none border-t border-slate-500"
             >
               <input type="radio" name="my-accordion-2" />

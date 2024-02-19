@@ -5,6 +5,7 @@ import Posts from "./components/Posts";
 import Products from "./components/Products";
 import Stats from "./components/Stats";
 import Testimonials from "./components/Testimonials";
+import Loading from "./loading";
 
 export default function Home() {
   return (

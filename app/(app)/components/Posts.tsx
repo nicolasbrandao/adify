@@ -20,7 +20,7 @@ const sortedNewerPosts = postsWithKeywords
 
 export default function Posts() {
   return (
-    <section className="flex w-full flex-col items-center justify-center gap-4 p-4 lg:flex-row">
+    <section className="flex w-full flex-col items-center justify-center gap-4 p-4 lg:flex-row lg:items-stretch">
       {sortedNewerPosts.map((post, index) => (
         <PostCard key={index} post={post} keywords={post.keywords} />
       ))}

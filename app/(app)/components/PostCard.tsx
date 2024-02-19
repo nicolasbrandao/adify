@@ -12,7 +12,7 @@ type Props = {
 
 export default function PostCard({ post, keywords }: Props) {
   return (
-    <div className="card h-[600px] w-[325px] bg-neutral text-base-300">
+    <div className="card w-[325px] bg-neutral text-base-300">
       <figure>
         <Image
           src={urlForImage(post.image)}
@@ -22,14 +22,14 @@ export default function PostCard({ post, keywords }: Props) {
           className="h-[384px] w-full object-cover"
         />
       </figure>
-      <div className="card-body h-[200px]">
+      <div className="card-body">
         <h2 className="card-title">{post.title}</h2>
         <p>{post.subtitle}</p>
         <div className="card-actions flex flex-col items-center justify-between">
           <div className="flex gap-1 self-start">
-            {keywords.map((keyword) => (
+            {keywords.map((keyword, index) => (
               <div
-                key={keyword._ref}
+                key={index}
                 className="badge-base-content badge badge-outline whitespace-nowrap"
               >
                 {keyword.title}

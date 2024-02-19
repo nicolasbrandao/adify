@@ -44,6 +44,7 @@ export default function Hero() {
             height={384}
             alt="Shoes"
             className="h-fit w-full object-cover"
+            priority
           />
         </div>
       </div>
