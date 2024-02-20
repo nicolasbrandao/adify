@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import React from "react";
 
 export const metadata: Metadata = {
-  title: "Adify - Produtos",
-  description: "Adify - Produtos",
+  title: "Adify - Obrigado!",
+  description: "Adify - Obrigado!",
 };
 
 export default function RootLayout({

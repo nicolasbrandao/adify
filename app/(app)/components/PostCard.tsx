@@ -2,30 +2,44 @@ import React from "react";
 
 import Image from "next/image";
 import Link from "next/link";
+import { Keyword, Post } from "@/types/types";
+import { urlForImage } from "@/sanity/lib/image";
 
-export default function PostCard() {
+type Props = {
+  post: Post;
+  keywords: Keyword[];
+};
+
+export default function PostCard({ post, keywords }: Props) {
   return (
     <div className="card w-[325px] bg-neutral text-base-300">
       <figure>
         <Image
-          src="https://picsum.photos/700/384"
+          src={urlForImage(post.image)}
           width={700}
           height={384}
-          alt="Shoes"
+          alt={post.title}
           className="h-[384px] w-full object-cover"
         />
       </figure>
       <div className="card-body">
-        <h2 className="card-title">Este é o título de um post!</h2>
-        <p>If a dog chews shoes whose shoes does he choose?</p>
-        <div className="card-actions items-center justify-between">
-          <div className="flex gap-1">
-            <div className="badge-base-content badge badge-outline">
-              #Marketing
-            </div>
-            <div className="badge-base-content badge badge-outline">#SEO</div>
+        <h2 className="card-title">{post.title}</h2>
+        <p>{post.subtitle}</p>
+        <div className="card-actions flex flex-col items-center justify-between">
+          <div className="flex gap-1 self-start">
+            {keywords.map((keyword, index) => (
+              <div
+                key={index}
+                className="badge-base-content badge badge-outline whitespace-nowrap"
+              >
+                {keyword.title}
+              </div>
+            ))}
           </div>
-          <Link href={"/blog/teste"} className="btn-primary btn btn-xs">
+          <Link
+            href={`/blog/${post.slug.current}`}
+            className="btn-primary btn btn-xs self-end"
+          >
             Ler mais
           </Link>
         </div>

@@ -1,62 +1,58 @@
 import React from "react";
 
 import Image from "next/image";
+import { Post, Keyword } from "@/types/types";
+import { urlForImage } from "@/sanity/lib/image";
+import PortableComponents from "./PortableComponents";
 
-export default function PostDetails() {
+type Props = {
+  post: Post;
+  keywords: Keyword[];
+};
+
+export default function PostDetails({ post, keywords }: Props) {
+  const date = new Date(post._createdAt);
+  const options: Intl.DateTimeFormatOptions = {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  };
   return (
     <section className="mb-8 mt-16 flex flex-col lg:max-w-[700px]">
-      <header>
-        <Image
-          className="w-full lg:rounded-b-xl"
-          src="https://picsum.photos/700/384"
-          width={700}
-          height={384}
-          alt="Shoes"
-        />
-        <div className="p-4">
-          <h1 className="bg-gradient-to-r from-cyan-300 to-gray-200 bg-clip-text text-[2rem] font-bold text-transparent">
-            Título do Post
-          </h1>
-          <h2 className="my-2 font-bold">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Consequuntur quos inventore.
-          </h2>
-          <p className="text-sm italic">Nome do Autor do Post</p>
-          <p className="text-xs italic">1 de janeiro de 2024</p>
-        </div>
-      </header>
       <article>
-        <p className="p-4">
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Velit
-          placeat in iste ad repellat dolores at consectetur expedita molestias
-          accusantium officiis nihil, eveniet facilis ab architecto quis
-          incidunt dolore. Est?
-        </p>
-        <p className="p-4">
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Velit
-          placeat in iste ad repellat dolores at consectetur expedita molestias
-          accusantium officiis nihil, eveniet facilis ab architecto quis
-          incidunt dolore. Est?
-        </p>
-        <p className="p-4">
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Velit
-          placeat in iste ad repellat dolores at consectetur expedita molestias
-          accusantium officiis nihil, eveniet facilis ab architecto quis
-          incidunt dolore. Est?
-        </p>
-        <p className="p-4">
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Velit
-          placeat in iste ad repellat dolores at consectetur expedita molestias
-          accusantium officiis nihil, eveniet facilis ab architecto quis
-          incidunt dolore. Est?
-        </p>
-        <div className="flex gap-1 p-4">
-          <div className="badge badge-accent badge-outline">#Marketing</div>
-          <div className="badge badge-accent badge-outline">#SEO</div>
-          <div className="badge badge-accent badge-outline">#Growth</div>
+        <header>
+          <Image
+            className="w-full lg:rounded-b-xl"
+            src={urlForImage(post.image)}
+            width={700}
+            height={384}
+            alt={post.title}
+          />
+          <div className="p-4">
+            <h1 className="w-fit bg-gradient-to-r from-cyan-300 to-gray-200 bg-clip-text text-[2rem] font-bold text-transparent">
+              {post.title}
+            </h1>
+            <h2 className="my-2 font-bold">{post.subtitle}</h2>
+            <p className="text-sm italic">{post.author}</p>
+            <p className="text-xs italic">
+              {date.toLocaleDateString("pt-BR", options)}
+            </p>
+          </div>
+          <div className="flex gap-1 p-4">
+            {keywords.map((keyword, index) => (
+              <div
+                key={index}
+                className="badge badge-accent badge-outline whitespace-nowrap"
+              >
+                {keyword.title}
+              </div>
+            ))}
+          </div>
+        </header>
+        <div className="p-4">
+          <PortableComponents value={post.content} />
         </div>
       </article>
-      <footer></footer>
     </section>
   );
 }

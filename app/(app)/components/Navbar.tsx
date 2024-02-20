@@ -2,6 +2,9 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import Logo from "@/public/logo_transparent.png";
+import { sanity } from "@/sanity/lib/client";
+
+const services = await sanity.fetchServices();
 
 export default function Navbar() {
   return (
@@ -35,14 +38,15 @@ export default function Navbar() {
               <Link href="/sobre">Sobre</Link>
             </li>
             <li>
-              <Link href="/produtos">Produtos</Link>
+              <Link href="/servicos">Serviços</Link>
               <ul className="p-2">
-                <li>
-                  <Link href="/produtos/teste">Marketing</Link>
-                </li>
-                <li>
-                  <Link href="/produtos/teste">SEO</Link>
-                </li>
+                {services.map((service) => (
+                  <li key={service._id}>
+                    <Link href={`/servicos/${service.slug.current}`}>
+                      {service.title}
+                    </Link>
+                  </li>
+                ))}
               </ul>
             </li>
             <li>
@@ -68,29 +72,31 @@ export default function Navbar() {
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">
-          <li className="active:text-red-500">
-            <Link href="/" className="active:text-red-500">
-              Home
-            </Link>
+          <li>
+            <Link href="/">Home</Link>
           </li>
           <li>
             <Link href="/sobre">Sobre</Link>
           </li>
           <li>
             <details>
-              <summary>Produtos</summary>
+              <summary>Serviços</summary>
               <ul className="z-10 bg-primary p-2">
                 <li>
-                  <Link href="/produtos/teste" className="text-nowrap w-fit">
-                    Marketing
+                  <Link href="/servicos" className="whitespace-nowrap">
+                    Ver todos
                   </Link>
                 </li>
-                <li>
-                  <Link href="/produtos/teste">SEO</Link>
-                </li>
-                <li>
-                  <Link href="/produtos">Ver todos</Link>
-                </li>
+                {services.map((service) => (
+                  <li key={service._id}>
+                    <Link
+                      href={`/servicos/${service.slug.current}`}
+                      className="whitespace-nowrap"
+                    >
+                      {service.title}
+                    </Link>
+                  </li>
+                ))}
               </ul>
             </details>
           </li>
