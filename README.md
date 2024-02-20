@@ -1,7 +1,7 @@
 # Adify Growth Marketing 📈
 
 <div align="center">
-  <img alt="Task Manager Thumbnail" src="./public/thumbnail.png" width="100%" />
+  <img alt="Adify Thumbnail" src="./public/thumbnail.png" width="100%" />
 </div>
 
 ## 📙 Description
