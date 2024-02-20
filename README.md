@@ -10,7 +10,7 @@ Institutional web page developed for *Adify - Growth Marketing*.
 
 Built with Next.js & Sanity CMS.
 
-## Tech stack
+## 🛠️ Tech stack
 
 - Next.js
     - React
