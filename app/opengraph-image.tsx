@@ -39,7 +39,7 @@ export default async function Image() {
           alt="Adify - Growth Marketing"
         />
         <p>Adify - Growth Marketing</p>
-      </div>
+      </div>  
     ),
     {
       ...size,
