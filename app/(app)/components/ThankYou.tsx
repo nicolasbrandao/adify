@@ -4,8 +4,10 @@ import Logo from "@/public/logo_transparent.png";
 import { sanity } from "@/sanity/lib/client";
 import PortableComponents from "./PortableComponents";
 import PostCard from "./PostCard";
-import keyword from "@/sanity/schemas/keywords.schema";
 import ResourceBlock from "./ResourceBlock";
+import LinkedIn from "@/public/linkedin.svg";
+import Instagram from "@/public/instagram.svg";
+import Link from "next/link";
 
 const thankYouData = await sanity.fetchThankYou();
 const thankYou = thankYouData[0];
@@ -47,6 +49,14 @@ export default function About() {
             {thankYou.author}
             <Image src={Logo} height={32} width={32} alt="Logo Adify" />
           </p>
+          <div className="mt-4 flex items-center justify-center">
+            <Link href={thankYou.linkedin} target="_blank">
+              <Image src={LinkedIn} width={50} height={50} alt="LinkedIn" />
+            </Link>
+            <Link href={thankYou.instagram} target="_blank">
+              <Image src={Instagram} width={38} height={38} alt="Instagram" />
+            </Link>
+          </div>
         </footer>
       </article>
       <div className="mt-8 flex flex-col items-center justify-center gap-8">

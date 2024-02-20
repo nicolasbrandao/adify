@@ -14,7 +14,7 @@ export const contentType = "image/png";
 
 async function getFont() {
   const url = process.env.APP_URL;
-  const res = await fetch(`${url}/fonts/Montserrat-Regular.ttf`)
+  const res = await fetch(`${url}/fonts/Montserrat-Regular.ttf`);
   return res.arrayBuffer();
 }
 
@@ -39,7 +39,7 @@ export default async function Image() {
           alt="Adify - Growth Marketing"
         />
         <p>Adify - Growth Marketing</p>
-      </div>  
+      </div>
     ),
     {
       ...size,
