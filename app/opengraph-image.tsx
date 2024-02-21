@@ -16,13 +16,15 @@ async function getFont() {
   return res.arrayBuffer();
 }
 
+const url = process.env.APP_URL;
+
 export default async function Image() {
   return new ImageResponse(
     (
       <div
         style={{
-          fontSize: 128,
-          background: "white",
+          fontSize: 32,
+          background: "#2c363f",
           width: "100%",
           height: "100%",
           display: "flex",
@@ -30,7 +32,54 @@ export default async function Image() {
           justifyContent: "center",
         }}
       >
-        <p>Adify - Growth Marketing</p>
+        <div
+          style={{
+            width: "50%",
+            height: "100%",
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
+          <img
+            src={`${url}/logo_circle.png`}
+            alt="Adify"
+            style={{
+              width: "52%",
+              height: "50%",
+            }}
+          />
+          <p
+            style={{
+              fontSize: 64,
+              fontWeight: "bold",
+              color: "#88c0d0",
+              width: "50%",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              backgroundSize: "cover",
+              backgroundRepeat: "no-repeat",
+              backgroundPosition: "center",
+            }}
+          >
+            Adify
+          </p>
+        </div>
+        <p
+          style={{
+            fontSize: 48,
+            color: "white",
+            width: "50%",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
+          Ajudamos empresas a encontrarem seus indicadores, maturarem os
+          resultados e escalarem no digital
+        </p>
       </div>
     ),
     {
