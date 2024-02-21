@@ -1,6 +1,8 @@
 import React from "react";
 import { sanity } from "@/sanity/lib/client";
 
+const url = new URL(process.env.APP_URL || "");
+
 export async function generateMetadata({
   params,
 }: {
@@ -11,6 +13,7 @@ export async function generateMetadata({
     title: `Adify - ${postData.title}`,
     description: postData.subtitle,
     keyword: postData.keywords.map((keyword) => keyword.title),
+    metadataBase: url,
   };
 }
 

@@ -7,11 +7,14 @@ import React from "react";
 
 const montserrat = Montserrat({ subsets: ["latin"] });
 
+const url = new URL(process.env.APP_URL || "");
+
 export const metadata: Metadata = {
   title: "Adify - Growth Marketing",
   description:
     "Ajudamos empresas que dependem da geração de leads a encontrarem seus indicadores, maturarem os resultados e escalarem no digital",
   keywords: ["growth marketing", "analytics", "seo"],
+  metadataBase: url,
 };
 
 export default function RootLayout({
