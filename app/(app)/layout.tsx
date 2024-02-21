@@ -27,6 +27,7 @@ export default function RootLayout({
       <head>
         <meta property="og:url" content={process.env.APP_URL} />
         <meta name="og:type" content="website" />
+        <meta name="robots" content="index, follow"/>
       </head>
       <body className={montserrat.className}>
         <Navbar />
