@@ -24,6 +24,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt-BR">
+      <head>
+        <meta property="og:url" content={process.env.APP_URL} />
+        <meta name="og:type" content="website" />
+      </head>
       <body className={montserrat.className}>
         <Navbar />
         <main className="flex min-h-screen flex-col items-center bg-base-300">
