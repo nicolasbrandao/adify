@@ -1,10 +1,18 @@
 import React from "react";
-import type { Metadata } from "next";
+import { sanity } from "@/sanity/lib/client";
 
-export const metadata: Metadata = {
-  title: "Adify - Post",
-  description: "Adify - Post",
-};
+export async function generateMetadata({
+  params,
+}: {
+  params: { post: string };
+}) {
+  const postData = await sanity.fetchPostBySlug(params.post);
+  return {
+    title: `Adify - ${postData.title}`,
+    description: postData.subtitle,
+    keyword: postData.keywords.map((keyword) => keyword.title),
+  };
+}
 
 export default function RootLayout({
   children,

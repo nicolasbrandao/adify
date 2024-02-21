@@ -9,8 +9,9 @@ const montserrat = Montserrat({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Adify - Growth Marketing",
-  description: "Adify - Growth Marketing",
-  keywords: "Growth Marketing, Analytics, SEO",
+  description:
+    "Ajudamos empresas que dependem da geração de leads a encontrarem seus indicadores, maturarem os resultados e escalarem no digital",
+  keywords: ["growth marketing", "analytics", "seo"],
 };
 
 export default function RootLayout({
