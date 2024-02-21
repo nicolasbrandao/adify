@@ -6,18 +6,18 @@
 
 ## 📙 Description
 
-Institutional web page developed for *Adify - Growth Marketing*. 
+Institutional web page developed for _Adify - Growth Marketing_.
 
 Built with Next.js & Sanity CMS.
 
 ## 🛠️ Tech stack
 
 - Next.js
-    - React
-        - React Hook Form
-        - Zod
-    - Daisy UI / Tailwind
-    - Google APIs
+  - React
+    - React Hook Form
+    - Zod
+  - Daisy UI / Tailwind
+  - Google APIs
 - Sanity CMS
 
-*Developed with TypeScript*
+_Developed with TypeScript_

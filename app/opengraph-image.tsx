@@ -1,6 +1,4 @@
 import { ImageResponse } from "next/og";
-import LogoCircle from "@/public/logo_circle.png";
-import NextImage from "next/image";
 
 export const runtime = "edge";
 
@@ -32,12 +30,6 @@ export default async function Image() {
           justifyContent: "center",
         }}
       >
-        <NextImage
-          src={LogoCircle}
-          width={400}
-          height={400}
-          alt="Adify - Growth Marketing"
-        />
         <p>Adify - Growth Marketing</p>
       </div>
     ),

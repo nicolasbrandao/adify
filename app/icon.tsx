@@ -1,6 +1,4 @@
 import { ImageResponse } from "next/og";
-import LogoCircle from "@/public/logo_circle.png";
-import Image from "next/image";
 
 export const runtime = "edge";
 
@@ -25,12 +23,7 @@ export default function Icon() {
           color: "white",
         }}
       >
-        <Image
-          src={LogoCircle}
-          width={32}
-          height={32}
-          alt="Adify - Growth Marketing"
-        />
+        <p>Adify - Growth Marketing</p>
       </div>
     ),
     {
