@@ -9,7 +9,7 @@ type Props = {
 
 export default function ProductAccordion({ service, button = false }: Props) {
   return (
-    <div className="mb-10 flex flex-1 flex-col lg:justify-between">
+    <div className="mb-10 flex flex-1 flex-col p-4 lg:justify-between lg:p-0">
       <div className="mt-10 w-full">
         <h2 className="mx-4 my-1 text-xl text-accent">{service.title}</h2>
         <div className="border-b border-slate-500">

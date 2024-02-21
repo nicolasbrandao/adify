@@ -32,7 +32,7 @@ export default function ProductBlock({ service, reverse }: PropsType) {
         width={700}
         height={384}
         alt={service.title}
-        className="w-full lg:h-[384px] lg:object-cover"
+        className="w-full p-4 lg:h-[384px] lg:object-cover lg:p-0"
       />
       <div className="flex flex-col gap-4 p-4">
         <h2 className="text-[2rem]">{service.title}</h2>

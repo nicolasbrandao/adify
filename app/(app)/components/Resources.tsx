@@ -6,7 +6,7 @@ const resources = await sanity.fetchResources();
 
 export default function Resources() {
   return (
-    <section className="flex max-w-[1024px] flex-col gap-8">
+    <section className="flex max-w-[1024px] flex-col gap-8 p-4 lg:p-0">
       {resources.map((resource, index) => (
         <ResourceBlock
           key={resource._id}
