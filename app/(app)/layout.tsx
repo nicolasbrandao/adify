@@ -7,11 +7,14 @@ import React from "react";
 
 const montserrat = Montserrat({ subsets: ["latin"] });
 
+const url = new URL(process.env.APP_URL || "");
+
 export const metadata: Metadata = {
   title: "Adify - Growth Marketing",
   description:
     "Ajudamos empresas que dependem da geração de leads a encontrarem seus indicadores, maturarem os resultados e escalarem no digital",
   keywords: ["growth marketing", "analytics", "seo"],
+  metadataBase: url,
 };
 
 export default function RootLayout({
@@ -21,6 +24,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt-BR">
+      <head>
+        <meta property="og:url" content={process.env.APP_URL} />
+        <meta name="og:type" content="website" />
+      </head>
       <body className={montserrat.className}>
         <Navbar />
         <main className="flex min-h-screen flex-col items-center bg-base-300">
