@@ -75,6 +75,7 @@ export default async function Image() {
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
+            padding: "16px",
           }}
         >
           Ajudamos empresas a encontrarem seus indicadores, maturarem os
