@@ -5,6 +5,9 @@ import { Service } from "@/types/types";
 import classNames from "classnames";
 import { urlForImage } from "@/sanity/lib/image";
 import makeServiceColor from "@/app/utils/makeServiceColor";
+import SocialShare from "./SocialShare";
+
+const url = process.env.APP_URL ?? "";
 
 type Props = {
   service: Service;
@@ -44,6 +47,12 @@ export default function ProductDetails({ service }: Props) {
       <div className="flex w-full flex-row items-center justify-center">
         <ProductAccordion service={service} />
       </div>
+      <SocialShare
+        baseUrl={url}
+        slug={service.slug.current}
+        type="servico"
+        message={service.title}
+      />
     </section>
   );
 }
