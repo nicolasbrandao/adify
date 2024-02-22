@@ -19,7 +19,7 @@ export default function ProductDetails({ service }: Props) {
     makeServiceColor(service.color),
   );
   return (
-    <section className="my-auto mt-14 flex flex-col gap-4 p-4">
+    <section className="my-auto mt-14 flex max-w-[1200px] flex-col gap-4 p-4">
       <div className="flex flex-col gap-4 lg:flex-row">
         <div className="mt-12 flex flex-col gap-4 lg:max-w-[380px]">
           <h1 className="bg-gradient-to-r from-cyan-300 to-gray-200 bg-clip-text text-[2rem] font-bold text-transparent">
@@ -34,7 +34,7 @@ export default function ProductDetails({ service }: Props) {
           <p className="rounded-2xl bg-base-100 p-4">{service.detailsOne}</p>
           <p className="rounded-2xl bg-base-100 p-4">{service.detailsTwo}</p>
         </div>
-        <div className="mockup-window my-auto h-fit bg-base-100 lg:w-fit">
+        <div className="mockup-window m-auto h-fit max-h-[384px] max-w-[700px] bg-base-100 lg:w-full ">
           <Image
             src={urlForImage(service.image)}
             width={700}
