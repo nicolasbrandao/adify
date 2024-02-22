@@ -4,11 +4,14 @@ import Image from "next/image";
 import { Post, Keyword } from "@/types/types";
 import { urlForImage } from "@/sanity/lib/image";
 import PortableComponents from "./PortableComponents";
+import SocialShare from "./SocialShare";
 
 type Props = {
   post: Post;
   keywords: Keyword[];
 };
+
+const url = process.env.APP_URL ?? "";
 
 export default function PostDetails({ post, keywords }: Props) {
   const date = new Date(post._createdAt);
@@ -53,6 +56,12 @@ export default function PostDetails({ post, keywords }: Props) {
           <PortableComponents value={post.content} />
         </div>
       </article>
+      <SocialShare
+        slug={post.slug.current}
+        type="blog"
+        message={post.title}
+        baseUrl={url}
+      />
     </section>
   );
 }

@@ -35,6 +35,9 @@ dependencies:
   next-sanity:
     specifier: "7"
     version: 7.0.17(@sanity/client@6.12.3)(@sanity/icons@2.10.0)(@sanity/types@3.26.1)(@sanity/ui@2.0.1)(next@14.0.4)(react@18.0.0)(sanity@3.26.1)(styled-components@6.1.8)
+  next-share:
+    specifier: ^0.27.0
+    version: 0.27.0(react@18.0.0)
   prettier:
     specifier: ^3.2.4
     version: 3.2.4
@@ -5911,6 +5914,17 @@ packages:
     hasBin: true
     dev: false
 
+  /jsonp@0.2.1:
+    resolution:
+      {
+        integrity: sha512-pfog5gdDxPdV4eP7Kg87M8/bHgshlZ5pybl+yKxAnCZ5O7lCIn7Ixydj03wOlnDQesky2BPyA91SQ+5Y/mNwzw==,
+      }
+    dependencies:
+      debug: 2.6.9
+    transitivePeerDependencies:
+      - supports-color
+    dev: false
+
   /jsx-ast-utils@3.3.5:
     resolution:
       {
@@ -6434,6 +6448,21 @@ packages:
       react: 18.0.0
       sanity: 3.26.1(@types/node@20.0.0)(@types/react@18.0.0)(react-dom@18.0.0)(react@18.0.0)(styled-components@6.1.8)
       styled-components: 6.1.8(react-dom@18.0.0)(react@18.0.0)
+    dev: false
+
+  /next-share@0.27.0(react@18.0.0):
+    resolution:
+      {
+        integrity: sha512-Fmfl4LIL61g10vtiDECVldxtNgVNd4OQgnI5vk9IJxn/WMZLdhniUtV15xz4PGpo8UuDdTHwmDT8R/CP60EQHA==,
+      }
+    engines: { node: ">=8", npm: ">=5" }
+    peerDependencies:
+      react: ">=17.0.2"
+    dependencies:
+      jsonp: 0.2.1
+      react: 18.0.0
+    transitivePeerDependencies:
+      - supports-color
     dev: false
 
   /next@14.0.4(@babel/core@7.23.9)(react-dom@18.0.0)(react@18.0.0):

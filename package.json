@@ -19,6 +19,7 @@
     "googleapis": "^131.0.0",
     "next": "14.0.4",
     "next-sanity": "7",
+    "next-share": "^0.27.0",
     "prettier": "^3.2.4",
     "react": "^18",
     "react-dom": "^18",
