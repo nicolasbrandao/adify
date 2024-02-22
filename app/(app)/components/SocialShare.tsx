@@ -12,7 +12,7 @@ import {
 
 type Props = {
   baseUrl: string;
-  type: "blog" | "servico";
+  type: "blog" | "servicos";
   message: string;
   slug: string;
 };

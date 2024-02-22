@@ -50,7 +50,7 @@ export default function ProductDetails({ service }: Props) {
       <SocialShare
         baseUrl={url}
         slug={service.slug.current}
-        type="servico"
+        type="servicos"
         message={service.title}
       />
     </section>
