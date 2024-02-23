@@ -23,7 +23,7 @@ function SocialShare({ baseUrl, type, message, slug }: Props) {
       <FacebookShareButton
         url={`${baseUrl}/${type}/${slug}`}
         quote={message}
-        hashtag={"#nextshare"}
+        hashtag={"#adify"}
       >
         <FacebookIcon size={32} round />
       </FacebookShareButton>
