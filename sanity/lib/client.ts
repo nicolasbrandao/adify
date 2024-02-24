@@ -56,7 +56,7 @@ class SanityDAO {
 
   async fetchAllPosts(): Promise<Post[]> {
     return await client
-      .fetch("*[_type == 'post']", { cache: "no-store" })
+      .fetch("*[_type == 'post']", {}, { cache: "no-store" })
       .then((post) => {
         return post;
       })
