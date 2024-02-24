@@ -3,9 +3,8 @@ import ProductBlock from "./ProductBlock";
 import ProductsMenu from "./ProductsMenu";
 import { sanity } from "@/sanity/lib/client";
 
-const services = await sanity.fetchServices();
-
-export default function Products() {
+export default async function Products() {
+  const services = await sanity.fetchServices();
   return (
     <section className="mt-8 flex w-full flex-col items-center">
       <div className="mb-8 flex w-full max-w-[1200px] flex-col items-center gap-10">
@@ -17,6 +16,7 @@ export default function Products() {
           />
         ))}
       </div>
+      {/* @ts-expect-error */}
       <ProductsMenu />
     </section>
   );

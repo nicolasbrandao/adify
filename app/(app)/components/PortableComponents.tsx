@@ -5,7 +5,6 @@ import Link from "next/link";
 import Image from "next/image";
 import { ReactNode } from "react";
 import { client } from "@/sanity/lib/client";
-import { SanityImageSource } from "@sanity/image-url/lib/types/types";
 
 const builder = imageUrlBuilder(client);
 

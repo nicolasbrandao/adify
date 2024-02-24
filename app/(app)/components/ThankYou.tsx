@@ -9,34 +9,34 @@ import LinkedIn from "@/public/linkedin.svg";
 import Instagram from "@/public/instagram.svg";
 import Link from "next/link";
 
-const thankYouData = await sanity.fetchThankYou();
-const thankYou = thankYouData[0];
+export default async function About() {
+  const thankYouData = await sanity.fetchThankYou();
+  const thankYou = thankYouData[0];
 
-const posts = await sanity.fetchAllPosts();
+  const posts = await sanity.fetchAllPosts();
 
-const postsWithKeywords = await Promise.all(
-  posts.map(async (post) => {
-    const keywords = await sanity.fetchPostKeywords(post.keywords);
-    return { ...post, keywords };
-  }),
-);
+  const postsWithKeywords = await Promise.all(
+    posts.map(async (post) => {
+      const keywords = await sanity.fetchPostKeywords(post.keywords);
+      return { ...post, keywords };
+    }),
+  );
 
-const sortedNewerPost = postsWithKeywords
-  .sort(
-    (a, b) =>
-      new Date(b._createdAt).getTime() - new Date(a._createdAt).getTime(),
-  )
-  .slice(0, 1);
+  const sortedNewerPost = postsWithKeywords
+    .sort(
+      (a, b) =>
+        new Date(b._createdAt).getTime() - new Date(a._createdAt).getTime(),
+    )
+    .slice(0, 1);
 
-const resources = await sanity.fetchResources();
-const sortedNewerResource = resources
-  .sort(
-    (a, b) =>
-      new Date(b._createdAt).getTime() - new Date(a._createdAt).getTime(),
-  )
-  .slice(0, 1);
+  const resources = await sanity.fetchResources();
+  const sortedNewerResource = resources
+    .sort(
+      (a, b) =>
+        new Date(b._createdAt).getTime() - new Date(a._createdAt).getTime(),
+    )
+    .slice(0, 1);
 
-export default function About() {
   return (
     <section className="my-auto mt-28 max-w-[700px] p-4">
       <article className="flex flex-col gap-4">

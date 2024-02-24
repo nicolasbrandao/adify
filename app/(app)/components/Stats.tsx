@@ -1,9 +1,9 @@
 import React from "react";
 import { sanity } from "@/sanity/lib/client";
 
-const stats = await sanity.fetchStats();
+export default async function Stats() {
+  const stats = await sanity.fetchStats();
 
-function Stats() {
   return (
     <div className="stats stats-vertical my-20 bg-base-300 lg:stats-horizontal lg:my-32">
       <div className="stat">
@@ -75,5 +75,3 @@ function Stats() {
     </div>
   );
 }
-
-export default Stats;

@@ -9,11 +9,15 @@ import Testimonials from "./components/Testimonials";
 export default function Home() {
   return (
     <>
+      {/* @ts-expect-error */}
       <Hero />
       {/* @ts-expect-error */}
       <Posts />
+      {/* @ts-expect-error */}
       <Stats />
+      {/* @ts-expect-error */}
       <Products />
+      {/* @ts-expect-error */}
       <Testimonials />
       <ContactForm />
     </>

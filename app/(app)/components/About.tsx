@@ -9,10 +9,10 @@ import Logo from "@/public/logo_transparent.png";
 import { sanity } from "@/sanity/lib/client";
 import PortableComponents from "./PortableComponents";
 
-const aboutData = await sanity.fetchAbout();
-const about = aboutData[0];
+export default async function About() {
+  const aboutData = await sanity.fetchAbout();
+  const about = aboutData[0];
 
-export default function About() {
   return (
     <section className="my-auto max-w-[700px] p-4 pt-14">
       <article className="flex flex-col gap-4">

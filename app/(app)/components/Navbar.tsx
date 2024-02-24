@@ -4,9 +4,9 @@ import Link from "next/link";
 import Logo from "@/public/logo_transparent.png";
 import { sanity } from "@/sanity/lib/client";
 
-const services = await sanity.fetchServices();
+export default async function Navbar() {
+  const services = await sanity.fetchServices();
 
-export default function Navbar() {
   return (
     <nav className="navbar absolute z-10">
       <div className="navbar-start">

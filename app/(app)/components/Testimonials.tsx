@@ -5,9 +5,9 @@ import { sanity } from "@/sanity/lib/client";
 import { Testimonials as TestimonialsType } from "@/types/types";
 import { urlForImage } from "@/sanity/lib/image";
 
-const testimonialsData = await sanity.fetchTestimonials();
+export default async function Testimonials() {
+  const testimonialsData = await sanity.fetchTestimonials();
 
-export default function Testimonials() {
   return (
     <section className="flex w-full flex-col items-center gap-6 p-4 lg:flex-row lg:justify-center">
       {testimonialsData.map((testimonial, index) => {

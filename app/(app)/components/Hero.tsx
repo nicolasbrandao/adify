@@ -4,10 +4,10 @@ import Image from "next/image";
 import { sanity } from "@/sanity/lib/client";
 import { urlForImage } from "@/sanity/lib/image";
 
-const heroData = await sanity.fetchHero();
-const hero = heroData[0];
+export default async function Hero() {
+  const heroData = await sanity.fetchHero();
+  const hero = heroData[0];
 
-export default function Hero() {
   return (
     <section className="flex min-h-screen w-full flex-col items-center justify-center pt-14 lg:mx-auto lg:max-w-[700px]">
       <div className=" flex w-full flex-col gap-8 p-4">

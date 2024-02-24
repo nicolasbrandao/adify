@@ -17,7 +17,7 @@ type Props = {
   slug: string;
 };
 
-function SocialShare({ baseUrl, type, message, slug }: Props) {
+export default function SocialShare({ baseUrl, type, message, slug }: Props) {
   return (
     <div className="flex justify-end gap-2 p-4">
       <FacebookShareButton
@@ -40,5 +40,3 @@ function SocialShare({ baseUrl, type, message, slug }: Props) {
     </div>
   );
 }
-
-export default SocialShare;

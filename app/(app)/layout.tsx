@@ -30,6 +30,7 @@ export default function RootLayout({
         <meta name="robots" content="index, follow" />
       </head>
       <body className={montserrat.className}>
+        {/* @ts-expect-error */}
         <Navbar />
         <main className="flex min-h-screen flex-col items-center bg-base-300">
           {children}

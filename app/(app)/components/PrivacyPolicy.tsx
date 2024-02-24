@@ -4,10 +4,10 @@ import Logo from "@/public/logo_transparent.png";
 import { sanity } from "@/sanity/lib/client";
 import PortableComponents from "./PortableComponents";
 
-const privacyPolicyData = await sanity.fetchPrivacyPolicy();
-const privacyPolicy = privacyPolicyData[0];
+export default async function PrivacyPolicy() {
+  const privacyPolicyData = await sanity.fetchPrivacyPolicy();
+  const privacyPolicy = privacyPolicyData[0];
 
-export default function PrivacyPolicy() {
   return (
     <section className="my-auto max-w-[700px] p-4 pt-14">
       <article className="flex flex-col gap-4">
