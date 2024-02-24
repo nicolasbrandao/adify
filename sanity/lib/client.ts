@@ -59,11 +59,9 @@ class SanityDAO {
     const { signal } = controller;
 
     return await client
-      .fetch("*[_type == 'post']", signal, {
-        next: { revalidate: 2 },
-        cache: "no-store",
-      })
+      .fetch("*[_type == 'post']", signal)
       .then((post) => {
+        console.log("####", post);
         return post;
       })
       .catch((err) => {

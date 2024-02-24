@@ -2,8 +2,8 @@ import React from "react";
 import { sanity } from "@/sanity/lib/client";
 import BlogGallery from "../components/BlogGallery";
 
-export const dynamic = "force-dynamic";
-export const revalidate = 2;
+// export const dynamic = "force-dynamic";
+// export const revalidate = 0;
 
 const externalController = new AbortController();
 
