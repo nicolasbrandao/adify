@@ -2,22 +2,17 @@ import React from "react";
 import { sanity } from "@/sanity/lib/client";
 import BlogGallery from "../components/BlogGallery";
 
-// export const dynamic = "force-dynamic";
-// export const revalidate = 0;
+export default async function BlogPage() {
+  const posts = await sanity.fetchAllPosts();
 
-const externalController = new AbortController();
+  const postsWithKeywords = await Promise.all(
+    posts.map(async (post) => {
+      const keywords = await sanity.fetchPostKeywords(post.keywords);
+      return { ...post, keywords };
+    }),
+  );
 
-const posts = await sanity.fetchAllPosts(externalController);
+  const keywords = await sanity.fetchKeywords();
 
-const postsWithKeywords = await Promise.all(
-  posts.map(async (post) => {
-    const keywords = await sanity.fetchPostKeywords(post.keywords);
-    return { ...post, keywords };
-  }),
-);
-
-const keywords = await sanity.fetchKeywords();
-
-export default function BlogPage() {
   return <BlogGallery keywords={keywords} postsData={postsWithKeywords} />;
 }

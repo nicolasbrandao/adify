@@ -54,14 +54,10 @@ class SanityDAO {
       });
   }
 
-  async fetchAllPosts(abController?: AbortController): Promise<Post[]> {
-    const controller = abController || new AbortController();
-    const { signal } = controller;
-
+  async fetchAllPosts(): Promise<Post[]> {
     return await client
-      .fetch("*[_type == 'post']", signal)
+      .fetch("*[_type == 'post']", { cache: "no-store" })
       .then((post) => {
-        console.log("####", post);
         return post;
       })
       .catch((err) => {
