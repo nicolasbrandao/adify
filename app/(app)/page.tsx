@@ -7,6 +7,7 @@ import Stats from "./components/Stats";
 import Testimonials from "./components/Testimonials";
 
 export const dynamic = "force-dynamic";
+export const revalidate = 2;
 
 export default function Home() {
   return (

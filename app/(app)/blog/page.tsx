@@ -3,6 +3,7 @@ import { sanity } from "@/sanity/lib/client";
 import BlogGallery from "../components/BlogGallery";
 
 export const dynamic = "force-dynamic";
+export const revalidate = 2;
 
 const externalController = new AbortController();
 
