@@ -4,7 +4,9 @@ import BlogGallery from "../components/BlogGallery";
 
 export const dynamic = "force-dynamic";
 
-const posts = await sanity.fetchAllPosts();
+const externalController = new AbortController();
+
+const posts = await sanity.fetchAllPosts(externalController);
 
 const postsWithKeywords = await Promise.all(
   posts.map(async (post) => {

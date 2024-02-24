@@ -54,8 +54,8 @@ class SanityDAO {
       });
   }
 
-  async fetchAllPosts(): Promise<Post[]> {
-    const controller = new AbortController();
+  async fetchAllPosts(abController?: AbortController): Promise<Post[]> {
+    const controller = abController || new AbortController();
     const { signal } = controller;
 
     return await client

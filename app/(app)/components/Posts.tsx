@@ -2,7 +2,8 @@ import React from "react";
 import PostCard from "./PostCard";
 import { sanity } from "@/sanity/lib/client";
 
-const posts = await sanity.fetchAllPosts();
+const externalController = new AbortController();
+const posts = await sanity.fetchAllPosts(externalController);
 
 const postsWithKeywords = await Promise.all(
   posts.map(async (post) => {
