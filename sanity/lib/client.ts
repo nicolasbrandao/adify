@@ -12,7 +12,6 @@ import {
   PrivacyPolicy,
   ThankYou,
 } from "@/types/types";
-import { unknown } from "zod";
 
 export const client = createClient({
   apiVersion,
