@@ -1,8 +1,17 @@
 // TODO: fix types on this whole file
 import { PortableText } from "@portabletext/react";
+import imageUrlBuilder from "@sanity/image-url";
 import Link from "next/link";
 import Image from "next/image";
 import { ReactNode } from "react";
+import { client } from "@/sanity/lib/client";
+import { SanityImageSource } from "@sanity/image-url/lib/types/types";
+
+const builder = imageUrlBuilder(client);
+
+function urlFor(source: any) {
+  return builder.image(source);
+}
 
 type PortableComponentsConfigProps = {
   value?: {
@@ -16,7 +25,8 @@ const PortableComponentsConfig = {
   types: {
     image: ({ value }: PortableComponentsConfigProps) => (
       <Image
-        src={value!.imageUrl || ""}
+        src={urlFor(value).auto("format").url() || ""}
+        className="mx-auto my-4 w-fit object-cover"
         width={500}
         height={500}
         alt="Imagem"

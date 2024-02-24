@@ -38,7 +38,7 @@ const post = defineType({
       name: "content",
       title: "Content",
       type: "array",
-      of: [defineArrayMember({ type: "block" })],
+      of: [{ type: "block" }, { type: "image" }],
     },
     {
       name: "keywords",
