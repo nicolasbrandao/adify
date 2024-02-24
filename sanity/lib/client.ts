@@ -12,6 +12,7 @@ import {
   PrivacyPolicy,
   ThankYou,
 } from "@/types/types";
+import { unknown } from "zod";
 
 export const client = createClient({
   apiVersion,
@@ -55,8 +56,11 @@ class SanityDAO {
   }
 
   async fetchAllPosts(): Promise<Post[]> {
+    const controller = new AbortController();
+    const { signal } = controller;
+
     return await client
-      .fetch("*[_type == 'post']", {}, { cache: "no-store" })
+      .fetch("*[_type == 'post']", signal, { cache: "no-store" })
       .then((post) => {
         return post;
       })
