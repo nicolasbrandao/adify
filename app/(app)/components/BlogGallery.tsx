@@ -10,7 +10,11 @@ type Props = {
 };
 
 function BlogGallery({ keywords, postsData }: Props) {
-  const [renderedPosts, setRenderedPosts] = useState<Post[]>(postsData);
+  const sortedPostsData = postsData.sort(
+    (a, b) =>
+      new Date(b._createdAt).getTime() - new Date(a._createdAt).getTime(),
+  );
+  const [renderedPosts, setRenderedPosts] = useState<Post[]>(sortedPostsData);
   const [selectedKeyword, setSelectedKeyword] = useState<string>("all");
 
   const handleKeywordChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
@@ -18,11 +22,14 @@ function BlogGallery({ keywords, postsData }: Props) {
     setSelectedKeyword(newSelectedKeyword);
 
     if (newSelectedKeyword === "all") {
-      setRenderedPosts(postsData);
+      setRenderedPosts(sortedPostsData);
     } else {
-      const filteredPosts = postsData.filter(
-        (post) => post.keywords[0].title === newSelectedKeyword,
-      );
+      const filteredPosts = postsData
+        .filter((post) => post.keywords[0].title === newSelectedKeyword)
+        .sort(
+          (a, b) =>
+            new Date(b._createdAt).getTime() - new Date(a._createdAt).getTime(),
+        );
       setRenderedPosts(filteredPosts);
     }
   };
