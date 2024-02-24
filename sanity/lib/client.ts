@@ -20,10 +20,12 @@ export const client = createClient({
   useCdn,
 });
 
+const revalidate = 600; // seconds
+
 class SanityDAO {
   async fetchAbout(): Promise<About[]> {
     return await client
-      .fetch("*[_type == 'about']")
+      .fetch("*[_type == 'about']", {}, { next: { revalidate } })
       .then((about) => {
         return about;
       })
@@ -34,7 +36,7 @@ class SanityDAO {
 
   async fetchTestimonials(): Promise<Testimonials[]> {
     return await client
-      .fetch("*[_type == 'testimonials']")
+      .fetch("*[_type == 'testimonials']", {}, { next: { revalidate } })
       .then((testimonials) => {
         return testimonials;
       })
@@ -45,7 +47,7 @@ class SanityDAO {
 
   async fetchHero(): Promise<Hero[]> {
     return await client
-      .fetch("*[_type == 'hero']")
+      .fetch("*[_type == 'hero']", {}, { next: { revalidate } })
       .then((hero) => {
         return hero;
       })
@@ -67,7 +69,11 @@ class SanityDAO {
 
   async fetchPostBySlug(slug: string): Promise<Post> {
     return await client
-      .fetch("*[_type == 'post' && slug.current == $slug][0]", { slug })
+      .fetch(
+        "*[_type == 'post' && slug.current == $slug][0]",
+        { slug },
+        { next: { revalidate } },
+      )
       .then((post) => {
         return post;
       })
@@ -78,10 +84,14 @@ class SanityDAO {
 
   async fetchPostsByKeyword(keyword: string): Promise<Post[]> {
     return await client
-      .fetch('*[_type == "post" && references($keywordId)]', {
-        keywordId: `*[_type == 'keyword' && name == $keyword][0]._id`,
-        keyword,
-      })
+      .fetch(
+        '*[_type == "post" && references($keywordId)]',
+        {
+          keywordId: `*[_type == 'keyword' && name == $keyword][0]._id`,
+          keyword,
+        },
+        { next: { revalidate } },
+      )
       .then((posts) => {
         return posts;
       })
@@ -112,7 +122,7 @@ class SanityDAO {
 
   async fetchKeywords(): Promise<Keyword[]> {
     return await client
-      .fetch("*[_type == 'keyword']")
+      .fetch("*[_type == 'keyword']", {}, { next: { revalidate } })
       .then((keyword) => {
         return keyword;
       })
@@ -123,7 +133,7 @@ class SanityDAO {
 
   async fetchStats(): Promise<Stats[]> {
     return await client
-      .fetch("*[_type == 'stats']")
+      .fetch("*[_type == 'stats']", {}, { next: { revalidate } })
       .then((stats) => {
         return stats;
       })
@@ -135,7 +145,7 @@ class SanityDAO {
 
   async fetchServices(): Promise<Service[]> {
     return await client
-      .fetch("*[_type == 'service']")
+      .fetch("*[_type == 'service']", {}, { next: { revalidate } })
       .then((services) => {
         return services;
       })
@@ -147,7 +157,11 @@ class SanityDAO {
 
   async fetchServiceBySlug(slug: string): Promise<Service> {
     return await client
-      .fetch("*[_type == 'service' && slug.current == $slug][0]", { slug })
+      .fetch(
+        "*[_type == 'service' && slug.current == $slug][0]",
+        { slug },
+        { next: { revalidate } },
+      )
       .then((service) => {
         return service;
       })
@@ -158,7 +172,7 @@ class SanityDAO {
 
   async fetchResources(): Promise<Resource[]> {
     return await client
-      .fetch("*[_type == 'resource']")
+      .fetch("*[_type == 'resource']", {}, { next: { revalidate } })
       .then((resources) => {
         return resources;
       })
@@ -170,7 +184,7 @@ class SanityDAO {
 
   async fetchPrivacyPolicy(): Promise<PrivacyPolicy[]> {
     return await client
-      .fetch("*[_type == 'privacyPolicy']")
+      .fetch("*[_type == 'privacyPolicy']", {}, { next: { revalidate } })
       .then((about) => {
         return about;
       })
@@ -181,7 +195,7 @@ class SanityDAO {
 
   async fetchThankYou(): Promise<ThankYou[]> {
     return await client
-      .fetch("*[_type == 'thankYou']")
+      .fetch("*[_type == 'thankYou']", {}, { next: { revalidate } })
       .then((about) => {
         return about;
       })
