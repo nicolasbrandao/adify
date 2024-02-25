@@ -5,6 +5,7 @@ import { notFound } from "next/navigation";
 
 export async function generateStaticParams() {
   const postsData = await sanity.fetchAllPosts();
+  if (!postsData) notFound();
   return postsData.map((post) => ({
     post: post.slug.current,
   }));

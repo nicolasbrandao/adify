@@ -94,11 +94,7 @@ function BlogGallery() {
 
       <div className="my-auto flex flex-col flex-wrap gap-4 lg:flex-row lg:justify-center">
         {isLoading ? (
-          <div className="flex h-screen items-center">
-            <div className="mx-auto my-auto h-fit w-fit">
-              <span className="loading loading-spinner loading-lg" />
-            </div>
-          </div>
+          <LoadingSpinner />
         ) : renderedPosts.length > 0 ? (
           renderedPosts.map((post) => (
             <PostCard key={post._id} post={post} keywords={post.keywords} />
@@ -128,3 +124,13 @@ function BlogGallery() {
 }
 
 export default BlogGallery;
+
+function LoadingSpinner() {
+  return (
+    <div className="flex h-screen items-center">
+      <div className="mx-auto my-auto h-fit w-fit">
+        <span className="loading loading-spinner loading-lg" />
+      </div>
+    </div>
+  );
+}
