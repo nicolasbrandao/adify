@@ -5,6 +5,7 @@ import classNames from "classnames";
 import Link from "next/link";
 import React from "react";
 import Image from "next/image";
+import Reveal from "./animated/Reveal";
 
 type Props = {
   resource: Resource;
@@ -33,19 +34,27 @@ function ResourceBlock({ resource, reverse }: Props) {
         className={imageContainer}
       />
       <div className={textContainer}>
-        <h2 className="text-[2rem]">{resource.title}</h2>
-        <p className="bg-gradient-to-r from-cyan-300 to-gray-200 bg-clip-text text-[2.5rem] text-transparent">
-          {resource.highlight}
-        </p>
-        <p>{resource.description}</p>
-        <Link
-          href={resource.url}
-          target="_blank"
-          className="btn-primary btn flex max-w-[250px]"
-        >
-          Download
-          <ArrowDownTrayIcon className="h-6" />
-        </Link>
+        <Reveal>
+          <h2 className="text-[2rem]">{resource.title}</h2>
+        </Reveal>
+        <Reveal>
+          <p className="bg-gradient-to-r from-cyan-300 to-gray-200 bg-clip-text text-[2.5rem] text-transparent">
+            {resource.highlight}
+          </p>
+        </Reveal>
+        <Reveal>
+          <p>{resource.description}</p>
+        </Reveal>
+        <Reveal>
+          <Link
+            href={resource.url}
+            target="_blank"
+            className="btn-primary btn flex max-w-[250px]"
+          >
+            Download
+            <ArrowDownTrayIcon className="h-6" />
+          </Link>
+        </Reveal>
       </div>
     </div>
   );

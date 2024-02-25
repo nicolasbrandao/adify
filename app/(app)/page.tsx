@@ -5,20 +5,30 @@ import Posts from "./components/Posts";
 import Products from "./components/Products";
 import Stats from "./components/Stats";
 import Testimonials from "./components/Testimonials";
+import SlideIn from "./components/animated/SlideIn";
 
 export default function Home() {
   return (
     <>
       {/* @ts-expect-error */}
       <Hero />
+
       <Posts />
-      {/* @ts-expect-error */}
-      <Stats />
+
+      <SlideIn>
+        {/* @ts-expect-error */}
+        <Stats />
+      </SlideIn>
       {/* @ts-expect-error */}
       <Products />
-      {/* @ts-expect-error */}
-      <Testimonials />
-      <ContactForm />
+
+      <SlideIn>
+        {/* @ts-expect-error */}
+        <Testimonials />
+      </SlideIn>
+      <SlideIn>
+        <ContactForm />
+      </SlideIn>
     </>
   );
 }
