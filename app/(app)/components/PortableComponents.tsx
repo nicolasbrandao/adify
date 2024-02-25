@@ -1,4 +1,3 @@
-// TODO: fix types on this whole file
 import { PortableText } from "@portabletext/react";
 import imageUrlBuilder from "@sanity/image-url";
 import Link from "next/link";
