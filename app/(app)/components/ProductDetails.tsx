@@ -34,7 +34,7 @@ export default function ProductDetails({ service }: Props) {
           <p className="rounded-2xl bg-base-100 p-4">{service.detailsOne}</p>
           <p className="rounded-2xl bg-base-100 p-4">{service.detailsTwo}</p>
         </div>
-        <div className="mockup-window m-auto h-fit max-h-[384px] max-w-[700px] bg-base-100 lg:w-full ">
+        <div className="mockup-window m-auto h-fit max-h-[384px] w-full max-w-[700px] bg-base-100 ">
           <Image
             src={urlForImage(service.image)}
             width={700}
