@@ -56,14 +56,55 @@ class SanityDAO {
       });
   }
 
-  async fetchAllPosts(): Promise<Post[]> {
+  async fetchAllPosts(
+    page = 1,
+    pageSize = 10,
+    keyword?: string,
+  ): Promise<Post[]> {
+    const skip = (page - 1) * pageSize;
+    const limit = pageSize;
+
+    let query;
+
+    if (keyword && keyword !== "all") {
+      query = `*[_type == "post" && references(*[_type == 'keyword' && title == $keyword][0]._id)] | order(_createdAt desc) [${skip}...${skip + limit}]`;
+    } else {
+      query = `*[_type == "post"] | order(_createdAt desc) [${skip}...${skip + limit}]`;
+    }
+
     return await client
-      .fetch("*[_type == 'post']", {}, { cache: "no-store" })
-      .then((post) => {
-        return post;
+      .fetch(query, keyword ? { keyword } : {}, { cache: "no-store" })
+      .then((posts) => {
+        return posts;
       })
       .catch((err) => {
         console.error("ERROR: ", err);
+      });
+  }
+
+  async fetchTotalPostsCount(): Promise<number> {
+    return await client
+      .fetch("count(*[_type == 'post'])", {}, { cache: "no-store" })
+      .then((count) => {
+        return count;
+      })
+      .catch((err) => {
+        console.error("ERROR: ", err);
+        return 0;
+      });
+  }
+
+  async fetchTotalPostsCountByKeyword(keyword: string): Promise<number> {
+    const query = `count(*[_type == 'post' && references(*[_type == 'keyword' && title == $keyword][0]._id)])`;
+
+    return await client
+      .fetch(query, { keyword }, { cache: "no-store" })
+      .then((count) => {
+        return count;
+      })
+      .catch((err) => {
+        console.error("ERROR: ", err);
+        return 0;
       });
   }
 

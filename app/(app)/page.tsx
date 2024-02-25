@@ -11,7 +11,6 @@ export default function Home() {
     <>
       {/* @ts-expect-error */}
       <Hero />
-      {/* @ts-expect-error */}
       <Posts />
       {/* @ts-expect-error */}
       <Stats />
