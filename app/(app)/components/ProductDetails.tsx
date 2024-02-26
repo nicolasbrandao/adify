@@ -59,7 +59,7 @@ export default function ProductDetails({ service }: Props) {
         </SlideIn>
       </div>
       <div className="flex w-full flex-row items-center justify-center">
-        <SlideIn>
+        <SlideIn width="full">
           <ProductAccordion service={service} />
         </SlideIn>
       </div>

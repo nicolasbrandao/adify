@@ -18,8 +18,10 @@ type PropsType = {
 
 export default function ProductBlock({ service, reverse }: PropsType) {
   const mainContainer = classNames(
-    "flex flex-col lg:items-center w-full",
-    reverse ? "lg:flex-row-reverse" : "lg:flex-row",
+    "flex flex-col lg:items-center justify-center items-center w-full",
+    reverse
+      ? "lg:flex-row-reverse lg:justify-between"
+      : "lg:flex-row lg:justify-between",
   );
 
   const descriptionContainer = classNames(
@@ -29,18 +31,18 @@ export default function ProductBlock({ service, reverse }: PropsType) {
 
   return (
     <div className={mainContainer}>
-      <Reveal width="full">
+      <Reveal width="fit">
         <Image
           src={urlForImage(service.image)}
           width={700}
           height={384}
           alt={service.title}
-          className="w-full p-4 lg:h-[384px] lg:object-cover lg:p-0"
+          className="mx-auto w-fit p-4 lg:h-[384px] lg:object-cover lg:p-0"
         />
       </Reveal>
 
-      <div className="flex flex-col gap-4 p-4">
-        <Reveal>
+      <div className="flex w-full flex-col gap-4 p-4 lg:max-w-[500px]">
+        <Reveal width="fit">
           <h2 className="text-[2rem]">{service.title}</h2>
         </Reveal>
         <Reveal width="full">
@@ -59,7 +61,6 @@ export default function ProductBlock({ service, reverse }: PropsType) {
           </Link>
         </Reveal>
       </div>
-
       <div className="flex w-full lg:hidden">
         <SlideIn width="full">
           <ProductAccordion service={service} />
