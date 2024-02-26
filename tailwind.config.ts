@@ -12,6 +12,15 @@ const config: Config = {
       backgroundImage: {
         "grandient-standard": "linear-gradient(to right, #6EE7B7, #CBD5E0);",
       },
+      keyframes: {
+        float: {
+          "0%, 100%": { transform: "translateY(0px)" },
+          "50%": { transform: "translateY(-10px)" },
+        },
+      },
+      animation: {
+        float: "float 3s ease-in-out infinite",
+      },
     },
   },
   daisyui: {
@@ -44,4 +53,5 @@ const config: Config = {
   },
   plugins: [daisy],
 };
+
 export default config;
