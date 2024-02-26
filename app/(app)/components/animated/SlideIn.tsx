@@ -1,14 +1,16 @@
 "use client";
 
+import classNames from "classnames";
 import { motion, useAnimation, useInView } from "framer-motion";
 import React, { ReactNode, useEffect, useRef } from "react";
 
 type Props = {
   children: ReactNode;
   from?: "top" | "bottom" | "left" | "right";
+  width?: "fit" | "full";
 };
 
-function SlideIn({ children, from = "bottom" }: Props) {
+function SlideIn({ children, from = "bottom", width = "fit" }: Props) {
   const ref = useRef(null);
   const mainControls = useAnimation();
   const isInView = useInView(ref);
@@ -28,6 +30,8 @@ function SlideIn({ children, from = "bottom" }: Props) {
     }
   };
 
+  const mainContainer = classNames(width === "fit" ? "w-fit" : "w-full");
+
   return (
     <motion.div
       ref={ref}
@@ -41,6 +45,7 @@ function SlideIn({ children, from = "bottom" }: Props) {
         duration: 0.5,
         delay: 0.25,
       }}
+      className={mainContainer}
     >
       {children}
     </motion.div>

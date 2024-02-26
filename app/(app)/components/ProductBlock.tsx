@@ -43,27 +43,28 @@ export default function ProductBlock({ service, reverse }: PropsType) {
         <Reveal>
           <h2 className="text-[2rem]">{service.title}</h2>
         </Reveal>
-        <Reveal>
+        <Reveal width="full">
           <div className={descriptionContainer}>
             <p className="rounded-xl border-2 border-base-100 bg-base-content p-4 text-base-300">
               {service.description}
             </p>
           </div>
         </Reveal>
-        <Reveal>
+        <Reveal width="full">
           <Link
             href={`/servicos/${service.slug.current}`}
-            className="btn-primary btn lg:w-full"
+            className="btn-primary btn w-full"
           >
             Ver mais
           </Link>
         </Reveal>
       </div>
-      <SlideIn>
-        <div className="flex w-full lg:hidden">
+
+      <div className="flex w-full lg:hidden">
+        <SlideIn width="full">
           <ProductAccordion service={service} />
-        </div>
-      </SlideIn>
+        </SlideIn>
+      </div>
     </div>
   );
 }
