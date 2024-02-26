@@ -10,7 +10,7 @@ export default async function Hero() {
   const hero = heroData[0];
 
   return (
-    <section className="flex min-h-screen w-full flex-col items-center justify-center pt-14 lg:mx-auto lg:max-w-[700px]">
+    <section className="flex min-h-screen w-full flex-col items-center justify-center border pt-14 lg:mx-auto lg:max-w-[700px]">
       <div className=" flex w-full flex-col gap-8 p-4">
         <div>
           <Reveal>

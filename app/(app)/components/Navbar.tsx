@@ -10,7 +10,7 @@ export default async function Navbar() {
 
   return (
     <FadeIn>
-      <nav className="navbar absolute z-10">
+      <nav className="navbar absolute z-40">
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn-ghost btn lg:hidden">
