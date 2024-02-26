@@ -41,20 +41,20 @@ export default async function Hero() {
           </div>
         </Reveal>
       </div>
-      <div className="w-full px-4">
-        <div className="mockup-window my-auto w-full bg-base-100 h-fit max-h-[384px]">
-          <Reveal>
+      <Reveal>
+        <div className="w-full px-4">
+          <div className="mockup-window my-auto h-fit w-fit bg-base-100">
             <Image
               src={urlForImage(hero.image)}
               width={700}
               height={384}
               alt="Shoes"
-              className="h-fit w-full object-cover"
+              className="h-fit w-fit object-cover"
               priority
             />
-          </Reveal>
+          </div>
         </div>
-      </div>
+      </Reveal>
     </section>
   );
 }
