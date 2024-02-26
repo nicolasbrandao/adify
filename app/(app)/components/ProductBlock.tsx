@@ -18,7 +18,7 @@ type PropsType = {
 
 export default function ProductBlock({ service, reverse }: PropsType) {
   const mainContainer = classNames(
-    "flex flex-col lg:items-center justify-center items-center w-full",
+    "flex flex-col lg:items-center justify-center items-center w-full p-4",
     reverse
       ? "lg:flex-row-reverse lg:justify-between"
       : "lg:flex-row lg:justify-between",

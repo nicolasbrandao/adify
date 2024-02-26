@@ -25,7 +25,7 @@ export default function PostDetails({ post, keywords }: Props) {
       <article>
         <header>
           <Image
-            className="w-full lg:rounded-b-xl"
+            className="w-full p-4 lg:rounded-b-xl"
             src={urlForImage(post.image)}
             width={700}
             height={384}
