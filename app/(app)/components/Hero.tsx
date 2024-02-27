@@ -10,7 +10,7 @@ export default async function Hero() {
   const hero = heroData[0];
 
   return (
-    <section className="flex min-h-screen w-full flex-col items-center justify-center pt-14 lg:mx-auto lg:max-w-[700px] relative top-0 left-0">
+    <section className="relative left-0 top-0 flex min-h-screen w-full flex-col items-center justify-center pt-14 lg:mx-auto lg:max-w-[700px]">
       <div className=" flex w-full flex-col gap-8 p-4">
         <div>
           <Reveal>
@@ -41,20 +41,20 @@ export default async function Hero() {
           </div>
         </Reveal>
       </div>
-        <div className="w-full px-4">
-          <Reveal width="full">
-            <div className="mockup-window m-auto h-fit w-fit bg-base-100">
-              <Image
-                src={urlForImage(hero.image)}
-                width={700}
-                height={384}
-                alt="Shoes"
-                className="h-fit object-cover"
-                priority
-              />
-            </div>
-          </Reveal>
-        </div>
+      <div className="w-full px-4">
+        <Reveal width="full">
+          <div className="mockup-window m-auto h-fit w-fit bg-base-100">
+            <Image
+              src={urlForImage(hero.image)}
+              width={700}
+              height={384}
+              alt="Shoes"
+              className="h-fit object-cover"
+              priority
+            />
+          </div>
+        </Reveal>
+      </div>
     </section>
   );
 }
