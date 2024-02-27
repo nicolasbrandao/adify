@@ -12,16 +12,13 @@ export default function Home() {
     <>
       {/* @ts-expect-error */}
       <Hero />
-
       <Posts />
-
       <SlideIn>
         {/* @ts-expect-error */}
         <Stats />
       </SlideIn>
       {/* @ts-expect-error */}
       <Products />
-
       <SlideIn>
         {/* @ts-expect-error */}
         <Testimonials />
