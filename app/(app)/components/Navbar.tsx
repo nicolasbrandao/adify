@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef, useCallback } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
@@ -13,22 +13,45 @@ import { Service } from "@/types/types";
 export default function Navbar() {
   const [services, setServices] = useState<Service[]>([]);
   const [openMenu, setOpenMenu] = useState<"mobile" | "1" | "2" | null>(null);
-
-  useEffect(() => {
-    const fetchPosts = async () => {
-      const servicesData = await sanity.fetchServices();
-      setServices(servicesData);
-    };
-    fetchPosts();
-  }, []);
+  const mobileMenuRef = useRef<HTMLUListElement>(null);
+  const menu1Ref = useRef<HTMLUListElement>(null);
+  const menu2Ref = useRef<HTMLUListElement>(null);
 
   const toggleMenu = (menuNumber: "mobile" | "1" | "2" | null) => {
     setOpenMenu((prev) => (prev === menuNumber ? null : menuNumber));
   };
 
-  const closeMenus = () => {
+  const closeMenus = useCallback(() => {
     setOpenMenu(null);
-  };
+  }, []);
+
+  const closeOutsideMenus = useCallback(
+    (e: MouseEvent) => {
+      if (
+        openMenu &&
+        ![mobileMenuRef, menu1Ref, menu2Ref].some((ref) =>
+          ref.current?.contains(e.target as Node),
+        )
+      ) {
+        closeMenus();
+      }
+    },
+    [openMenu, closeMenus],
+  );
+
+  useEffect(() => {
+    const fetchServices = async () => {
+      const servicesData = await sanity.fetchServices();
+      setServices(servicesData);
+    };
+    fetchServices();
+
+    document.addEventListener("click", closeOutsideMenus);
+
+    return () => {
+      document.removeEventListener("click", closeOutsideMenus);
+    };
+  }, [openMenu, closeOutsideMenus]);
 
   return (
     <FadeIn>
@@ -59,6 +82,7 @@ export default function Navbar() {
             <AnimatePresence>
               {openMenu === "mobile" && (
                 <motion.ul
+                  ref={mobileMenuRef}
                   initial={{ opacity: 0, y: -10 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -10 }}
@@ -137,24 +161,25 @@ export default function Navbar() {
           </Link>
         </div>
         <div className="hidden lg:flex">
-          <ul className="flex gap-8 px-1">
-            <li>
+          <ul className="flex gap-6 px-1">
+            <li className="rounded-lg p-2 hover:bg-neutral/[.1]">
               <Link href="/">Home</Link>
             </li>
-            <li>
+            <li className="rounded-lg p-2 hover:bg-neutral/[.1]">
               <Link href="/sobre">Sobre</Link>
             </li>
             <li>
               <div
-                className="flex cursor-pointer items-center gap-1"
+                className="flex cursor-pointer items-center gap-1 rounded-lg p-2 hover:bg-neutral/[.1]"
                 onClick={() => toggleMenu("1")}
               >
                 <p>Serviços</p>
                 <ChevronDownIcon className="h-5" />
               </div>
-              {openMenu === "1" && (
-                <AnimatePresence>
+              <AnimatePresence>
+                {openMenu === "1" && (
                   <motion.ul
+                    ref={menu1Ref}
                     className="absolute z-10 mt-2 flex w-fit flex-col gap-2 rounded-box bg-primary p-4 shadow"
                     initial={{ opacity: 0, y: -10 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -180,27 +205,28 @@ export default function Navbar() {
                       >
                         <Link
                           href={`/servicos/${service.slug.current}`}
-                          className="whitespace-nowrap"
+                          className="block whitespace-nowrap"
                         >
                           {service.title}
                         </Link>
                       </li>
                     ))}
                   </motion.ul>
-                </AnimatePresence>
-              )}
+                )}
+              </AnimatePresence>
             </li>
             <li>
               <div
-                className="flex cursor-pointer items-center gap-1"
+                className="flex cursor-pointer items-center gap-1 rounded-lg p-2 hover:bg-neutral/[.1]"
                 onClick={() => toggleMenu("2")}
               >
                 <p>Recursos</p>
                 <ChevronDownIcon className="h-5" />
               </div>
-              {openMenu === "2" && (
-                <AnimatePresence>
+              <AnimatePresence>
+                {openMenu === "2" && (
                   <motion.ul
+                    ref={menu2Ref}
                     className="absolute z-10 mt-2 flex flex-col gap-2 rounded-box bg-primary p-2 shadow"
                     initial={{ opacity: 0, y: -10 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -211,17 +237,21 @@ export default function Navbar() {
                       onClick={closeMenus}
                       className="rounded-box px-2 hover:bg-neutral/[.2]"
                     >
-                      <Link href="/blog">Blog</Link>
+                      <Link href="/blog" className="block">
+                        Blog
+                      </Link>
                     </li>
                     <li
                       onClick={closeMenus}
                       className="rounded-box px-2 hover:bg-neutral/[.2]"
                     >
-                      <Link href="/materiais">Materiais</Link>
+                      <Link href="/materiais" className="block">
+                        Materiais
+                      </Link>
                     </li>
                   </motion.ul>
-                </AnimatePresence>
-              )}
+                )}
+              </AnimatePresence>
             </li>
           </ul>
         </div>
