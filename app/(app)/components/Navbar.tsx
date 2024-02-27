@@ -16,9 +16,21 @@ export default function Navbar() {
   const mobileMenuRef = useRef<HTMLUListElement>(null);
   const menu1Ref = useRef<HTMLUListElement>(null);
   const menu2Ref = useRef<HTMLUListElement>(null);
+  const [menu1ChevronRotation, setMenu1ChevronRotation] = useState(0);
+  const [menu2ChevronRotation, setMenu2ChevronRotation] = useState(0);
 
   const toggleMenu = (menuNumber: "mobile" | "1" | "2" | null) => {
     setOpenMenu((prev) => (prev === menuNumber ? null : menuNumber));
+    if (menuNumber === "1") {
+      setMenu1ChevronRotation((prevRotation) => (prevRotation === 0 ? 180 : 0));
+      setMenu2ChevronRotation(0);
+    } else if (menuNumber === "2") {
+      setMenu2ChevronRotation((prevRotation) => (prevRotation === 0 ? 180 : 0));
+      setMenu1ChevronRotation(0);
+    } else {
+      setMenu1ChevronRotation(0);
+      setMenu2ChevronRotation(0);
+    }
   };
 
   const closeMenus = useCallback(() => {
@@ -174,7 +186,13 @@ export default function Navbar() {
                 onClick={() => toggleMenu("1")}
               >
                 <p>Serviços</p>
-                <ChevronDownIcon className="h-5" />
+                <ChevronDownIcon
+                  className="h-5"
+                  style={{
+                    transform: `rotate(${menu1ChevronRotation}deg)`,
+                    transition: "transform 0.3s ease",
+                  }}
+                />
               </div>
               <AnimatePresence>
                 {openMenu === "1" && (
@@ -221,7 +239,13 @@ export default function Navbar() {
                 onClick={() => toggleMenu("2")}
               >
                 <p>Recursos</p>
-                <ChevronDownIcon className="h-5" />
+                <ChevronDownIcon
+                  className="h-5"
+                  style={{
+                    transform: `rotate(${menu2ChevronRotation}deg)`,
+                    transition: "transform 0.3s ease",
+                  }}
+                />
               </div>
               <AnimatePresence>
                 {openMenu === "2" && (
