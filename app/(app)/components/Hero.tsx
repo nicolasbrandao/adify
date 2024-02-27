@@ -47,7 +47,7 @@ export default async function Hero() {
             <Image
               src={urlForImage(hero.image)}
               width={700}
-              height={384}
+              height={50}
               alt="Shoes"
               className="h-fit object-cover"
               priority
