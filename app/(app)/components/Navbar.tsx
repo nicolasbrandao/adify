@@ -35,7 +35,17 @@ export default function Navbar() {
 
   const closeMenus = useCallback(() => {
     setOpenMenu(null);
-  }, []);
+    if (openMenu === "1") {
+      setMenu1ChevronRotation((prevRotation) => (prevRotation === 0 ? 180 : 0));
+      setMenu2ChevronRotation(0);
+    } else if (openMenu === "2") {
+      setMenu2ChevronRotation((prevRotation) => (prevRotation === 0 ? 180 : 0));
+      setMenu1ChevronRotation(0);
+    } else {
+      setMenu1ChevronRotation(0);
+      setMenu2ChevronRotation(0);
+    }
+  }, [openMenu]);
 
   const closeOutsideMenus = useCallback(
     (e: MouseEvent) => {
@@ -141,7 +151,7 @@ export default function Navbar() {
                     <div onClick={() => toggleMenu("2")}>
                       <p className="pointer-events-none">Recursos</p>
                     </div>
-                    <ul className="p-2">
+                    <ul className="flex flex-col gap-2 p-2">
                       <li
                         onClick={closeMenus}
                         className="rounded-box px-2 hover:bg-neutral/[.2]"
