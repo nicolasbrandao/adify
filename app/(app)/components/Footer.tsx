@@ -20,7 +20,7 @@ function Footer() {
         >
           Política de privacidade
         </Link>
-        <p>CNPJ 39.234.669/0001-83 Aráras - SP</p>
+        <p>CNPJ 53.736.974/0001-02 R Princeza Izabel, 320, Arararas-SP</p>
       </div>
     </footer>
   );
