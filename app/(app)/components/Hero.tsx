@@ -14,7 +14,7 @@ export default async function Hero() {
       <div className=" flex w-full flex-col gap-8 p-4">
         <div>
           <Reveal>
-            <h1 className="w-fit bg-gradient-to-r from-cyan-300 to-gray-200 bg-clip-text text-[80px] font-bold text-transparent">
+            <h1 className="w-fit bg-gradient-to-r from-cyan-300 to-gray-200 bg-clip-text text-[45px] font-bold text-transparent">
               {hero.title}
             </h1>
           </Reveal>
